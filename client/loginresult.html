@@ -1,0 +1,49 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+	<title>AppLaud: OpenID Login Success and Redirect</title>
+	<script type="text/javascript">
+		function onLoad() {
+			var params, pairs, useragent, url, email = null;
+			params = document.URL.substr(document.URL.indexOf('?') + 1);
+            params = params.split('&');               
+            pairs = params[0].split('=');
+            if(pairs[0] === 'email') {
+                email = pairs[1];
+            }
+
+ 			useragent = navigator.userAgent;
+       		//console.log(useragent);
+//       		alert(useragent);
+
+			url = document.URL;
+
+			// If registered: loginresult.html  (no params)
+			// If not registered: loginresult.html?applaudusername={email}   
+			openLink = function(email) {
+			    var link = url.substring(0, url.lastIndexOf('/')) + (email ? '/register.html' + '?' + params[0] : '/applaud.html');
+			    window.open(link, '_self');
+			};
+       		
+       		if (useragent.indexOf('Firefox') != -1) {
+       			alert("Your browser is Firefox. Chrome is recommended. Use at your own risk.");
+       			openLink(email);
+       		} else if ((useragent.indexOf('AppleWebKit') != -1) && (useragent.indexOf('Android ') === -1) &&
+       				   ((useragent.indexOf('Chrome') != -1) || (useragent.indexOf('Safari') != -1))) {
+  				if ((useragent.indexOf('Safari') != -1) && (useragent.indexOf('Chrome') === -1))
+			    	alert("Your browser is Safari. Chrome is recommended. Use at your own risk.");
+			    	
+				openLink(email);
+			} else if (useragent.indexOf('Android ') === -1) {
+				document.getElementById("warn").innerHTML = "You should use Chrome with AppLaud. Please login from a supported browser."
+			}
+		}
+	</script>
+</head>
+<body onload="onLoad();">
+	<h3>AppLaud: OpenID Login Success!</h3>
+	<p>You will be redirected to your AppLaud home or the AppLaud register page.</p>
+	<p><span style="color:#f22;" id="warn"></span></p>
+</body>
+</html>

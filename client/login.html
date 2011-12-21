@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+	<title>Login to AppLaud</title>
+	
+	
+	<!-- DEVELJQ-->
+	<link rel="stylesheet" type="text/css" href="jquery/themes/startAppLaud/jquery-ui-1.8.16.custom.css"/>
+	<link type="text/css" rel="stylesheet" href="css/applaudweb.css" />
+	<link type="text/css" rel="stylesheet" href="openid/css/openid.css" />
+	<script type="text/javascript" src="jquery/jquery-1.6.4.min.js"></script>
+	<script type="text/javascript" src="jquery/jquery-ui-1.8.16.custom.min.js"></script>
+	<script type="text/javascript" src="jquery/jquery.form.js"></script>
+	<!-- DEVELJQ-->
+	<!--PACKAGEJQ
+	<link rel="stylesheet" type="text/css" href="themes/startAppLaud/jquery-ui-1.8.16.custom.css"/>
+	<link type="text/css" rel="stylesheet" href="css/applaudweb.css" />
+	<link type="text/css" rel="stylesheet" href="openid/css/openid.css" />
+	<SCRIPT type="text/javascript" src="jquery-all.js"></SCRIPT>
+	<!--PACKAGEJQ-->
+	
+	<script type="text/javascript" src="openid/openid-jquery.js"></script>
+	<script type="text/javascript" src="openid/openid-en.js"></script>
+	<script type="text/javascript" src="js/applaudweb.js"></script>
+	
+	<script type="text/javascript">
+		$(document).ready(function() {
+			openid.init('openid_identifier');
+			openid.setDemoMode(false); //Stops form submission for client javascript-only test purposes
+
+    		$('#openid_form')
+        		.ajaxForm({
+            		// url : 'myscript.php', 
+            		// dataType : 'json',
+            		cache : false,
+           		 	success : function (responseText, statusText) {
+                		console.log("AppLaudLog: openid_form success: statusText: " + statusText);
+                		if (responseText.indexOf('https://') === 0) {
+                    		console.log("AppLaudLog: .ajaxForm success https:// response found: " + responseText);
+                    		window.open(responseText,'_self');
+                		} else {
+                   		 	console.log("AppLaudLog: .ajaxForm success : responseText = " + responseText);
+                    		}
+               		 } 
+        	});
+        	$("#login-accordion").accordion({ header: "h3", collapsible: true, active: false });
+        	$('#helplogin-dialog').dialog({
+					autoOpen: false,
+					width: 400,
+					buttons: {
+						"Close": function() { 
+							$(this).dialog("close"); 
+						} 
+					}
+			});
+			$('#helplogin-button').click(function() { 
+				$('#helplogin-dialog').dialog('open');
+				//return false; 
+			});
+		});
+	</script>
+   <!--ANALYTICS
+	<script type="text/javascript">
+ 	 var _gaq = _gaq || [];
+ 	 _gaq.push(['_setAccount', 'UA-26470649-1']);
+  	_gaq.push(['_trackPageview']);
+ 	 (function() {
+    	var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    	ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    	var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  	})();
+	</script>
+	<!--ANALYTICS-->
+</head>
+
+<body>
+<header>
+	<h4><a href="http://applaudcloud.com"><img src="icon/applaudcloud.png" alt="AppLaud Cloud"></a></h4>
+	<h4><a href="http://www.mobiledevelopersolutions.com" target='_blank'>by Mobile Developer Solutions</a></h4>
+</header>
+     <section>  
+      	<div id="intro-login" class="ui-widget ui-widget-content ui-corner-all container"> 
+     	<h2>Step 1: Login <span style="font-size:22px;color:#cdd4d0;">&mdash;&gt; Step 2: Register &mdash;&gt; Step 3: Start Coding!</span></h2>
+     	<button id="helplogin-button">Why am I here <span style="color:#d6e600;">again</span>?</button>
+		<p>Log in using one of the Open ID providers below
+		&#40;keeps your passwords secure, easier for us!&#41; and you&#39;ll
+		be directed to the AppLaud Cloud register page.</p>	
+		<div class="clear"></div>
+ 		</div> 
+     </section>	   
+     <section>   <!-- Main content area -->  
+		<div id="form-content"> 	
+			<aside>
+			<section>
+				<header>
+					<h3>Select Your OpenID Provider</h3>
+				</header>
+				<form action="/openidAuth" method="get" id="openid_form">
+					<input type="hidden" name="action" value="verify" />
+						<div id="openid_choice">
+						<div id="openid_btns"></div>
+						</div>
+					<!-- <div id="openid_input_area">
+						<input id="openid_submit" type="submit" value="Sign-In"/>
+					</div> -->
+				</form>
+			</section>				
+    		</aside> 
+		<div id="login-content" class="ui-widget ui-widget-content ui-corner-all container">
+		<section>
+			<header>
+			<h2>OpenID Login instructions</h2>
+			</header>
+			<div>
+			Select an OpenID Provider to register.<br/>
+			<p>Use the same OpenID Provider to sign in from the <a href="applauddoc.html#applaud-app" target='_blank'>AppLaud App</a>.</p>
+			</div>
+		</section>
+	</div>
+	</div>	<!-- /content -->
+
+	<section>
+		<div id="login-accordion">
+		<div>
+			<h3><a href="#">Sign in using Open ID? Why?</a></h3>
+			<div>
+			<p>OpenID is the fast, easy and secure way to sign in to websites. Here are just a few benefits to using OpenID.</p>
+					<ul>
+			<li>Accelerate Sign Up Process at Your Favorite Websites</li>
+			<li>Reduce Frustration Associated with Maintaining Multiple Usernames and Passwords</li>
+						<li>Gain Greater Control Over Your Online Identity</li>
+			<li>Minimize Password Security Risks</li>
+			<li> More at <a href="http://openid.net/get-an-openid/individuals/" target='_blank'>openid site</a> </li>
+		</ul>
+			</div>
+		</div>
+		<div>
+			<h3><a href="#">What is Open ID anyway?</a></h3>
+			<div>
+			Read more about OpenID authentication on the 
+			<a href="http://openid.net/" target='_blank'>Open ID Foundation website.</a>
+			<p>OpenID is service that allows you to log-on to many different websites using a single indentity.
+				Find out <a href="http://openid.net/what/" target='_blank'>more about OpenID</a> and <a href="http://openid.net/get/" target='_blank'>how to get an OpenID enabled account</a>.</p>			
+			</div>
+		</div>
+		<div>
+			<h3><a href="#">What happens after I log in?</a></h3>
+			<div>You will be taken to the AppLaud Register page. The second and last step
+			before you can start creating Android apps.<br/>
+			Future visits to login will skip the register process.</div>
+		</div>
+		<div>
+			<h3><a href="#">What if I don't login in now, but want to know more?</a></h3>
+			<div>We understand the annoyance of registering over and over,and reluctance
+			to give your precious information to just anyone. Soo... <br/> There much more
+			AppLaud Cloud information available <a href="index.html" target='_blank'>here</a>. We made the
+			<a href="applauddoc.html#applaud-app" target='_blank'>AppLaud App</a> available to everyone - not just registered users. 
+			</div>
+		</div>
+		</div>
+		</section>
+    </section>
+    <div id="helplogin-dialog"  title="If you&#39;ve already logged in to AppLaud once..">
+		<span class="ui-icon ui-icon-info" style="float: left; margin-right: .3em;"></span>
+		And wonder why you&#39;re here again, good question!<br/>
+		One of the following may have happened:
+		<ul>
+			<li>You are on a different browser or machine</li>
+			<li>The AppLaud Cloud server restarted</li>
+		</ul>
+		If you&#39;ve successfully logged in and registered already, select the same Open ID
+		provider and you&#39;ll go straight to your AppLaud home. Sorry for the inconvenience.
+	</div>
+ 	<footer>
+		<div>
+		<section id="about">
+				<h3>About</h3>
+				<ul>
+				<li><a href="http://www.mobiledevelopersolutions.com/home/about" target='_blank'>Who</a></li>
+				<li><a href="https://groups.google.com/forum/#!forum/applaud-cloud" target='_blank'>AppLaud Forum</a></li>
+				</ul>
+		</section>
+		<section id="links">
+				<h3>Links</h3>
+			<ul>
+				<li><a href="http://www.phonegap.com/" target='_blank'>PhoneGap</a></li>
+				<li><a href="http://jquerymobile.com/" target='_blank'>jQuery Mobile</a></li>
+				<li><a href="http://ace.ajax.org/" target='_blank'>Ace Editor</a></li>
+				<li><a href="http://phonegap.github.com/weinre/" target='_blank'>Weinre</a></li>
+				<li><a href='http://ripple.tinyhippos.com/' target='_blank'>Ripple</a></li>
+			</ul>
+		</section>
+				<section id="documentation">
+				<h3>Documentation</h3>
+			<ul>
+				<li><a href="applauddoc.html" target='_blank'>AppLaud Documentation</a></li>
+				<li><a href="http://docs.phonegap.com/en/1.1.0/index.html" target='_blank'>PhoneGap 1.1.0 Docs</a></li>
+				<li><a href="http://jquerymobile.com/demos/1.0rc1/" target='_blank'>jQuery Mobile RC1 Docs and Demos</a></li>
+				<li><a href="http://phonegap.github.com/weinre/" target='_blank'>Weinre Docs</a></li>
+				<li><a href='http://rippledocs.tinyhippos.com/index.html' target='_blank'>Ripple Docs</a></li>
+			</ul>
+		</section>
+		</div>
+	    <div class="copyright">&copy; 2011 <a href="http://www.mobiledevelopersolutions.com">Mobile Developer Solutions</a></div>
+	</footer>
+</body>
+</html>

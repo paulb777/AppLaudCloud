@@ -1,0 +1,71 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+	<title>AppLaud App Help</title>
+   <!--ANALYTICS
+	<script type="text/javascript">
+ 	 var _gaq = _gaq || [];
+ 	 _gaq.push(['_setAccount', 'UA-26470649-1']);
+  	_gaq.push(['_trackPageview']);
+ 	 (function() {
+    	var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    	ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    	var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  	})();
+	</script>
+	<!--ANALYTICS-->
+</head>
+
+<body>
+	<h3>AppLaud App Help</h3>
+	 <h3><a id="overview">Overview</a></h3>
+	The AppLaud App has two main functionalities - each represented by a navigation page.
+	<ul>
+					<li>The My Apps Page works with AppLaud Cloud to run and
+						debug a developer's project. It can run pure JavaScript Android
+						PhoneGap apps directly from the cloud. No download or install is
+						necessary to run projects. The Download APKs feature enables downloading and running any built
+						Android app in the developer's workspace on the device.</li>
+					<li>The Demo Page will run or download several different apps that
+						illustrate PhoneGap and jQuery Mobile's capabilities.</li>
+	 	</ul>
+
+ <h3><a id="login">Login</a></h3>
+	<ul>
+		<li>No login is required for the Demo Apps Page.</li>
+		<li>Login is required for the My Apps Page. Like AppLaud Cloud, the app uses OpenId to authenticate the user. 
+		The same OpenId provider must be used on the device that is used in AppLaud Cloud.
+		This authentication allows the app to access any of the user's projects created in the cloud.
+	</ul>
+	
+ <h3><a id='myapps'>My Apps Page</a></h3>
+	<ul>
+		<li>Click Refresh Project List to see all the projects in your workspace.</li>
+		<li>Click any specific project to run it. Note that currently only pure Android PhoneGap projects are supported. If your project modifies the Java part of the project, you will still need to
+				download the project to run it on the device.</li>
+		<li>Click the W on the project to enable a Weinre debugger connection for the project. Click the project to run. In AppLaud Cloud, select Debug &gt; Weinre Controller. Then click Elements to debug the running app.</li>
+		<li>Click Refresh APKs List to update the list of apk files available for download to your device. This will find projects that you have previously built from AppLaud Cloud with any
+				of the Package options. Then click on one of the files to download the apk to your device, install, and run. If the install fails, you may need to uninstall a package of the same name from 
+				the device.  Go to Settings &gt; Manage Applications and choose Uninstall OR If you have the SDK available, uninstall the app using adb command line interface: type adb uninstall.</li>
+	</ul>
+	
+ 	<h3><a id="demo">My Demo Page</a></h3>
+	 	<ul>
+	 	<li>No login necessary.</li>
+		<li>In the Demo Projects, click any specific project to run it.</li>
+		<li>If you want to install the demo project to your device to run independently, click on it in the Demo APKs section.</li>
+	</ul>
+	
+	<h3>Menu</h3>
+	 	<ul>
+	 	<li>Change/Set Login Info will navigate you to the Login Page or Logout. Note that Logout will logout of the AppLaud app, but not necessarily from the Open ID provider</li>
+		<li>Home Page lets you choose between the My Apps and Demo Pages as the starting page for future runs of the AppLaud App</li>
+		</ul>
+ 	<h3><a id="source">Source</a></h3>
+		<ul>
+		<li>AppLaud App source on <a href="https://github.com/paulb777/AppLaudApp">GitHub</a></li>
+		</ul>
+
+</body>
+</html>

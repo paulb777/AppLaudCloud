@@ -1,0 +1,388 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+	<title>AppLaud Cloud Documentation</title>
+	
+	<!-- DEVELJQ-->
+	<link rel="stylesheet" type="text/css" href="jquery/themes/startAppLaud/jquery-ui-1.8.16.custom.css"/>
+	<link type="text/css" rel="stylesheet" href="css/applaudweb.css" />
+	<script type="text/javascript" src="jquery/jquery-1.6.4.min.js"></script>
+	<script type="text/javascript" src="jquery/jquery-ui-1.8.16.custom.min.js"></script>
+	<script type="text/javascript" src="jquery/jquery.form.js"></script>
+	<script type="text/javascript" src="jquery/jquery.scrollTo.js"></script>
+	
+	<!-- DEVELJQ-->
+	<!--PACKAGEJQ
+	<link rel="stylesheet" type="text/css" href="themes/startAppLaud/jquery-ui-1.8.16.custom.css"/>
+	<link type="text/css" rel="stylesheet" href="css/applaudweb.css" />
+	<SCRIPT type="text/javascript" src="jquery-all.js"></SCRIPT>
+	<!--PACKAGEJQ-->
+
+	<script type="text/javascript" src="js/applaudweb.js"></script>	
+   <!--ANALYTICS
+	<script type="text/javascript">
+ 	 var _gaq = _gaq || [];
+ 	 _gaq.push(['_setAccount', 'UA-26470649-1']);
+  	_gaq.push(['_trackPageview']);
+ 	 (function() {
+    	var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    	ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    	var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  	})();
+	</script>
+	<!--ANALYTICS-->
+</head>
+<header>
+	<h4><a href="http://applaudcloud.com"><img src="icon/applauddocumentation.png" alt="AppLaud Cloud"></a></h4>
+	<h4><a href="http://www.mobiledevelopersolutions.com" target='_blank'>by Mobile Developer Solutions</a></h4>
+</header>
+<body> 
+    <section>  <!-- Main content area --> 
+    <div id="content"> 
+	<aside id="doc-aside">
+		<section>
+			<header>
+				<h3><a href="#applaud-cloud">AppLaud Cloud</a></h3>
+			</header>
+			<ul>
+				<li><a href="#login-reg">Login and Register</a></li>
+				<li><a href="#user-guide">User Guide</a></li>
+				<li><a href="#faq">FAQ</a></li>
+			</ul>
+		</section>
+		<section>
+			<header>
+				<h3><a href="#applaud-cloud-ide">AppLaud Cloud IDE</a></h3>
+			</header>
+				<h4><a href="#navbar">Menu Help</a></h4>
+				<ul>
+					<li><a href="#navbar-new">New</a></li>
+					<li><a href="#navbar-file">File</a></li>
+					<li><a href="#navbar-edit">Edit</a></li>
+					<li><a href="#navbar-emulate">Emulate</a></li>
+					<li><a href="#navbar-debug">Debug</a></li>
+					<li><a href="#navbar-package">Package</a></li>
+					<li><a href="#navbar-preferences">Preferences</a></li>
+					<li><a href="#navbar-help">Help</a></li>
+				</ul>
+				<h4><a href="#right-click">Right-Click Help</a></h4>
+				<ul>
+					<li><a href="#right-click">Options</a></li>
+				</ul>
+		</section>		
+		<section>
+			<header>
+				<h3><a href="#applaud-app">AppLaud App</a></h3>
+			</header>
+			<ul>
+				<li><a href="#app-overview">Overview</a></li>
+				<li><a href="#app-download"><strong>Download App</strong></a></li>
+				<li><a href="#app-login">Login Info</a></li>
+				<li><a href="#app-myapps">My Apps Page</a></li>
+				<li><a href="#app-demo">Demos Apps Page</a></li>
+				<li><a href="#app-menu">App Menu</a></li>
+				<li><a href="https://github.com/paulb777/AppLaudApp" target="_blank">App Source &#40;github&#41;</a></li>
+			</ul>
+		</section>
+    </aside> 
+	<div id="main-content" class="scroll-container ui-widget ui-widget-content ui-corner-all">
+	  <div id="doc-scroll-area">
+ 		<h2><a id='applaud-cloud'>AppLaud Cloud</a></h2>
+ 		<h3><a id='login-reg'>Login and Register</a></h3>
+			To log in and register, visit the <a href="login.html" target="_blank">AppLaud Login</a> 
+			page and follow instructions from there.
+		<h3><a id='user-guide'>User Guide</a></h3>
+			An overview of AppLaud Cloud capabilities and how to get started. 
+			The same information shows up in the edit pane when no files are open or re-opened with
+			menu Help &ndash;&gt; Get Started.
+			<div id="user-guide-bloc">
+			<h4>Start a Project</h4>
+			<ul>
+			<li>Choose New &ndash;&gt; Project</li>
+			<li>Give it a name, select a Project Template, and click Create</li>
+			<li>Double click files in left pane to edit</li>
+			<li>File and Edit options available with right click and New/File/Edit menus</li>
+			<li>Make sure browser pop-ups are enabled</li>
+			</ul>
+			<h4>Running the App</h4>
+			<img src='icon/applaudappapk100x100.png' class='floatRight'>
+			<ul>
+			<li>Build not required</li>
+			<li>Scan the QR Code to download the app to the device</li>
+			<li>AppLaud App <a href='applauddoc.html#applaud-app'>Documentation</a></li>
+			<li>Tap 'Refresh Project List'</li>
+			<li>Tap a project to begin running it</li>
+			</ul>
+			<h4>Debugging</h4>
+			<ul>
+			<li>Tap 'W' icon on device app's Project List</li>
+			<li>Tap the project</li>
+			<li>On the desktop, select Debug &ndash;&gt; Weinre Controller</li>
+			<li>Make sure there is a green client and select Elements</li>
+			<li>Examine HTML, change CSS, call functions, etc</li>
+			<li>More at <a href='http://phonegap.github.com/weinre/Home.html' target='_blank'>Weinre Home</a></li>
+			</ul>
+			<h4>Emulating</h4>
+			<ul>
+			<li>Select Emulate &ndash;&gt; Ripple Emulator</li>
+			<li>Use Chrome Developer Tools to run and examine the project</li>
+			<li>Use Ripple Console to simulate PhoneGap APIs</li>
+			<li>More at <a href='http://ripple.tinyhippos.com/' target='_blank'>Ripple Home</a></li>
+			</ul>
+			<h4>Packaging/Building</h4>
+			<ul>
+			<li>Choose a build type</li>
+			<li>Wait a minute or two for server build</li>
+			<li>On the app, choose 'Refresh APK List</li>
+			<li>Select app to download to your device</li>
+			</ul>
+			<h4>Uploading Files</h4>
+			<ul>
+			<li>Select File &ndash;&gt; Upload</li>
+			<li>Right click on .zip files and select unzip</li>
+			<li>Also drag and drop files onto window and select File &ndash;&gt; Save As</li>
+			</ul>
+			<h4>Downloading Files/Folders/Projects</h4>
+			<ul>
+			<li>Right click &ndash;&gt; Download</li>
+			</ul>
+		</div>
+ 			
+ 		<h3><a id="faq">FAQ</a></h3>
+
+			<strong>1. Can I develop Java with AppLaud?</strong><br/>
+			 While AppLaud is primarily focused on JavaScript/HTML/CSS development, it supports doing any Android development, 
+				including editing and updating Java files. AppLaud Cloud can build and package any Android app and the AppLaud App
+				will download any Android app. Note that the standard AppLaud App's run project without download capability does not work for 
+				project's with modified Java files.<br/><br/>
+				
+
+			<strong>2. It's the web, why only Android?</strong><br/>
+			While almost all of the technology in AppLaud is cross-platform, a few key pieces are OS-specific. Since we're prioritizing 
+			creating a great fully-functional development environment, we want to do that with a constrained test matrix first. iOS is our next
+			priority.<br/><br/>
+			
+			<strong>3. What's the business model?</strong><br/>
+			There are several options. Currently the major focus is to create a great development environment and build a strong
+			user community. The product is free to use. The intention is for the environment to always remain free for open source development. Stay
+			tuned.<br/><br/>
+			
+			<strong>4. How do you import Eclipse projects into AppLaud Cloud?</strong><br/>
+			
+			In Eclipse:
+			<ul>
+				<li>Right click on project name and choose <strong>Export</strong></li>
+				<li>Select <strong>Archive File</strong></li>
+				<li>Choose <strong>file name</strong> for zip</li>
+				<li>Click <strong>Finish</strong></li>
+				</ul>
+			In AppLaud Cloud:
+			<ul>
+				<li>Select <strong>New -> Import Project</strong></li>
+				<li>Enter<strong> Project Name</strong>. It may be different than the Eclipse name</li>
+				<li><strong>Choose File</strong>. Navigate to the location of the zip file</li>
+				<li>Click <strong>Import Project</strong></li> 
+				</ul>
+			
+ 		<h2><a id='applaud-cloud-ide'>AppLaud Cloud IDE</a></h2>
+		<h3><a id='navbar'>Menu Help</a></h3>		
+			<h3><a id='navbar-new'>New</a></h3>
+				<ul>
+					<li><strong>Project</strong> Start the New Project wizard	</li>
+					<li><strong>Folder</strong> When a project or folder is selected, create a new folder</li>
+					<li><strong>File</strong> When a project or folder is selected, create a new file</li>
+					<li><strong>Upload</strong> When a project or folder is selected, select files to upload. To upload a directory, use zip on your workstation, 
+						upload the zipfile, right click to unzip.  Also, single files can be dragged and dropped to an open edit window and saved with File&ndash;&gt;Save As</li>
+				</ul>
+			<h3><a id='navbar-file'>File</a></h3>
+				<ul>
+					<li><strong>Save</strong> Save the currently open file. Also command-S or control-S. Also see, Preferences&ndash;&gt;Editor&ndash;&gt;Automatic Save All	</li>
+					<li><strong>Save As</strong> Save current file to a selected project or folder. Especially useful for dragged and dropped files</li>
+					<li><strong>Save All</strong> Save all currently modified files</li>
+					<li><strong>Open</strong> Open currently selected project, folder, or file</li>
+					<li><strong>Rename</strong> Rename folder or file</li>
+					<li><strong>Delete</strong> Delete selected projects, folders, and files</li>
+					<li><strong>Refresh</strong> Refresh selected project or folder. For example, after a build, Refresh on bin directory will show the new files</li>
+				</ul>
+			<h3><a id='navbar-edit'>Edit</a></h3>
+				<ul>
+					<li><strong>Cut</strong> Cut selected folders and files. The resources won't be removed until they're pasted elsewhere	</li>
+					<li><strong>Copy</strong> Copy selected folders and files.</li>
+					<li><strong>Paste</strong> Paste most recent cut or copy to selected folder or project</li>
+					<li><strong>Find</strong> Find and Replace wizard for currently open file</li>
+				</ul>		
+			<h3><a id='navbar-emulate'>Emulate</a></h3>
+				<ul>
+					<li><strong>Ripple Emulator</strong> <ul> 
+						<li> Use Chrome Developer Tools to run and examine the project </li>
+						<li> Use Ripple Console to simulate PhoneGap APIs </li>
+						<li> More at <a href='http://ripple.tinyhippos.com/' target='_blank'>Ripple Home</a></li></ul></li>
+				</ul>		
+			<h3><a id='navbar-debug'>Debug</a></h3>
+				<ul>
+				<li><strong>Weinre Controller</strong> Opens <a href='http://phonegap.github.com/weinre/Home.html' target='blank'>Weinre</a> controller to examine
+				 apps running with weinre enabled on device with the Applaud App. </li>
+				</ul>		
+			<h3><a id='navbar-package'>Package</a></h3> The builds may take a few minutes. You can continue to work, but be careful not to change files being built. 
+	      		The resulting builds are available for download with the AppLaud App's Refresh APKs option. Note that building is not typically
+	      		necessary in the development process, since apps can be run without building from the AppLaud App.
+				<ul>
+					<li><strong>Basic Build</strong> Runs standard Android development build (ant debug) on the server. </li>
+					<li><strong>Debug (weinre) Build</strong> Same as Basic build, but the resulting apk file has weinre enabled </li>
+					<li><strong>Release Build</strong> Runs a wizard to create a signed release build (ant release) More about getting the required information 
+					<a href='http://developer.android.com/guide/publishing/app-signing.html' target='_blank'>here</a></li>
+				</ul>		
+			<h3><a id='navbar-preferences'>Preferences</a></h3>
+				<ul>
+					<li><strong>Editor</strong> Manage preferences for the embedded 
+					<a href='http://ace.ajax.org/' target='blank'>Ace editor</a>. Note: changes are not yet persistent to subsequent AppLaud sessions </li>
+					<li><strong>Log Out</strong> Log out of AppLaud. Note: you may still be logged in to your OpenId provider. </li>
+				</ul>		
+			<h3><a id='navbar-help'>Help</a></h3>
+				<ul>
+					<li><strong>User Guide</strong> An overview of AppLaud Cloud capabilities and how to get started. The same information shows up in the edit pane when no files are open </li>
+					<li><strong>Menu Items</strong> You're here now </li>
+					<li><strong>Right Click</strong> Capabilities when right clicking on projects, folders, and files </li>
+					<li><strong>AppLaud Forum</strong> Mailing list and forum (a <a href="https://groups.google.com/forum/#!forum/applaud-cloud" >Google Group</a>) to discuss AppLaud Cloud </li>
+					<li><strong>Editor Shortcuts</strong> Link to the keyboard shortcuts for the Ace editor </li>
+				</ul>
+			<h3><a id='right-click'>AppLaud Right Click Options</a></h3>
+				<ul>
+					<li><strong>New File</strong> When a project or folder is selected, create a new file</li>
+	    			<li><strong>New Folder</strong> When a project or folder is selected, create a new folder</li>
+	    			<li><strong>Rename</strong> Rename folder or file</li>
+	   				<li><strong>Delete</strong> Delete selected projects, folders, and files</li>
+	    			<li><strong>Cut</strong> Cut selected folders and files. The resources won't be removed until they're pasted elsewhere	</li>
+					<li><strong>Copy</strong> Copy selected folders and files.</li>
+					<li><strong>Paste</strong> Paste most recent cut or copy to selected folder or project</li>
+					<li><strong>Unzip</strong> Files with the suffix .zip are unzipped in place</li>
+					<li><strong>Download</strong> Download file to workstation. Projects and folders are zipped first</li>
+				</ul>
+ 		<h2><a id='applaud-app'>AppLaud App</a></h2>
+ 			<h3><a id="app-overview">Overview</a></h3>
+				<img src='icon/applaudappicon.png' width="60" height="60" class='floatRight'>				
+				The AppLaud App pulls an AppLaud Cloud-built app onto the device, therefore <strong>no</strong>
+				wires, host configuration or SDKs are needed to install, run and debug the app. 
+				The AppLaud App launcher icon is shown to the right. The app&#39;s two main pages are:
+				<ul>
+					<li><strong>My Apps Page</strong> works with AppLaud Cloud to run and
+						debug developer projects. Access to apps from this page requires login
+						as it accesses the developer&#39;s AppLaud Cloud workspace.<br/><br/>
+						<ul>
+							<li><strong>My Projects</strong> lists all projects. It runs 
+							pure JavaScript Android PhoneGap apps directly from<br/> the cloud. Tap to
+							run; no download or install of the app is necessary.</li><br/>
+							<img src='icon/appicon.png' width="60" height="60" class='floatRight'>
+							<li><strong>My APKs</strong> lists projects that have been built 
+							&#40;<em>basic</em>, <em>weinre debug</em> or
+							<em>release</em> builds&#41; in the developer&#39;s workspace. 
+							Tap apps in this list to start download from the cloud. 
+							When download completes,
+							install and run the app from the device&#39;s Notification list. The default
+							icon for AppLaud Cloud apps is shown to the right.
+							</li>
+						</ul><br/>
+					<li><strong>Demo Apps Page</strong> will run or download the Demos that
+						illustrate PhoneGap and jQuery Mobile's capabilities. The sources for all
+						of the Demo Apps projects are available as templates at project creation time.</li>
+	 			</ul>
+ 			<h3><a id="app-download">Download</a><img src='icon/applaudappapk100x100.png' class='floatRight'></h3>
+				<ul>
+					<li> Scan the QR Code from the device to download from the Android Market</li>   
+					<li><strong><em>Or</em></strong> from the mobile device browser, navigate to 
+						<a href="index.html">applaudcloud.com</a> and tap<br/> the
+						 <em>Download AppLaud App</em> button</li>
+					<li><strong><em>Or</em></strong> Download from Android Market ("AppLaud App") </li>
+					<li><strong><em>Or</em></strong> Click <a href="app.apk">here</a> to download .apk file directly to your browser</li>
+					<li><strong><em>Or</em></strong> Build the source from <a href="https://github.com/paulb777/AppLaudApp">GitHub</a></li>
+				</ul>
+ 			<h3><a id="app-login">Login</a></h3>
+				<ul>
+					<li>No login is required for the <strong>Demo Apps Page</strong>. </li>
+					<li>Login is required for the <strong>My Apps Page</strong>. Like AppLaud Cloud, the app uses OpenId to authenticate the user.</li>
+					<li>The same OpenId provider <strong><em>must</em></strong> be used on the device that is used in AppLaud Cloud.
+					This authentication allows the app to access the user's projects created in the cloud.</li>
+				</ul>
+ 			<h3><a id='app-myapps'>My Apps Page</a></h3>
+ 				<img src='icon/myapps-b.png' width="180" height="269" class='floatRight'>
+				<ul>
+					<li>Tap <strong>Refresh Project List</strong> to see all projects in your workspace. </li>
+					<li>Tap any specific project to run it. Note that currently only pure Android PhoneGap 
+						projects are supported. If your project modifies the <em>Java</em> part of the project, 
+						you will still need to download the project to run it on the device. </li>
+					<li>Tap the <strong>W</strong> on the project to enable a Weinre debugger connection for 
+						the project. Tap the project to run. In AppLaud Cloud, select <strong>Debug &ndash;&gt; Weinre 
+						Controller</strong>. Then click <strong>Elements</strong> to debug the running app.
+						<ul>
+						<li><img src='icon/weinregrey18x18.png' width="18" height="18"> Weinre Disabled</li>
+						<li><img src='icon/weinreblue18x18.png' width="18" height="18"> Weinre Enabled</li>
+						</ul>
+					<li>Tap <strong>Refresh APKs List</strong> to update the list of apk files available for 
+						download to your device. This will find projects that you have previously built from 
+						AppLaud Cloud with any of the <strong>Package</strong> options&#40;<em>basic</em>, 
+						<em>weinre debug</em> or <em>release</em> builds&#41;. Tap on one of the files to 
+						download the apk to your device, install, and run. If the install fails, you may 
+						need to uninstall a package of the same name from 
+						the device:
+						<ul>
+						<li>In your device&#39;s <strong>Settings</strong> find the <strong>Application Management</strong>
+						page, select the application and choose <strong>Uninstall</strong></li>
+						<li><strong><em>OR</em></strong> If you have the SDK available, uninstall 
+						the app using adb<br/> command line interface: <strong><em> adb uninstall
+						 &#91;class.path.appname&#93;</em></strong>.</li>
+						</ul>
+				</ul>	
+ 			<h3><a id="app-demo">Demos Page</a></a><img src='icon/demospage.png' width="180" height="269" class='floatLeft'></h3>
+	 				<ul>
+	 				<li>No login necessary; any one can install AppLaud App and run these projects. Demo Project and 
+	 				APKs lists function identical to My Apps page.</li>
+					<li><strong><em>Demo Projects</em></strong>: tap any project to run it.</li>
+					<li><strong><em>Demo APKs</em></strong>: tap to install the demo project to your device and run independently.
+				</ul>	
+	 		<h3><a id="app-menu">App Menu</a></h3>
+	 			<ul>
+	 				<li><strong>Login &#47; Logout</strong> menu item will navigate you to the Login Page or Logout. 
+	 				Note that Logout will log out of the AppLaud App, but not necessarily from the Open ID provider </li>
+					<li><strong>Home Page</strong> lets you set <strong>My Apps</strong> or <strong>Demo Pages</strong>
+					as the starting page for future runs of the AppLaud App. </li>
+				</ul>
+	
+		</div>  <!-- /doc-scroll-area -->
+	</div>	<!-- /main-content -->
+	</div>
+    </section>    
+	<footer>
+		<div>
+		<section id="about">
+				<h3>About</h3>
+				<ul>
+				<li><a href="http://www.mobiledevelopersolutions.com/home/about" target='_blank'>Who</a></li>
+				<li><a href="https://groups.google.com/forum/#!forum/applaud-cloud" target='_blank'>AppLaud Forum</a></li>
+				</ul>
+		</section>
+		<section id="links">
+				<h3>Links</h3>
+			<ul>
+				<li><a href="http://www.phonegap.com/" target='_blank'>PhoneGap</a></li>
+				<li><a href="http://jquerymobile.com/" target='_blank'>jQuery Mobile</a></li>
+				<li><a href="http://ace.ajax.org/" target='_blank'>Ace Editor</a></li>
+				<li><a href="http://phonegap.github.com/weinre/" target='_blank'>Weinre</a></li>
+				<li><a href='http://ripple.tinyhippos.com/' target='_blank'>Ripple</a></li>
+			</ul>
+		</section>
+				<section id="documentation">
+				<h3>Documentation</h3>
+			<ul>
+				<li><a href="applauddoc.html" target='_blank'>AppLaud Documentation</a></li>
+				<li><a href="http://docs.phonegap.com/en/1.1.0/index.html" target='_blank'>PhoneGap 1.1.0 Docs</a></li>
+				<li><a href="http://jquerymobile.com/demos/1.0rc1/" target='_blank'>jQuery Mobile RC1 Docs and Demos</a></li>
+				<li><a href="http://phonegap.github.com/weinre/" target='_blank'>Weinre Docs</a></li>
+				<li><a href='http://rippledocs.tinyhippos.com/index.html' target='_blank'>Ripple Docs</a></li>
+			</ul>
+		</section>
+		</div>
+	    <div class="copyright">&copy; 2011 <a href="http://www.mobiledevelopersolutions.com">Mobile Developer Solutions</a></div>
+	</footer>
+</body>
+</html>

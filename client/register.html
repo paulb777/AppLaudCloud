@@ -1,0 +1,149 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+	<title>Register for AppLaud</title>
+
+	<!-- DEVELJQ-->
+	<link rel="stylesheet" type="text/css" href="jquery/themes/startAppLaud/jquery-ui-1.8.16.custom.css"/>
+	<script type="text/javascript" src="jquery/jquery-1.6.4.min.js"></script>
+	<script type="text/javascript" src="jquery/jquery-ui-1.8.16.custom.min.js"></script>
+	<!-- DEVELJQ-->
+	<!--PACKAGEJQ
+	<link rel="stylesheet" type="text/css" href="themes/startAppLaud/jquery-ui-1.8.16.custom.css"/>
+	<script type="text/javascript" src="jquery-all.js"></script>
+	<!--PACKAGEJQ-->
+
+	<script type="text/javascript">
+			$(function(){
+				$('#reg-dialog').dialog({
+					autoOpen: false,
+					width: 400,
+					buttons: {
+						"Close": function() { 
+							$(this).dialog("close"); 
+						} 
+					}
+				});
+			});
+		</script>	
+	<link rel="stylesheet" href="register/register.css" type="text/css" media="screen"/>
+	<link type="text/css" rel="stylesheet" href="css/applaudweb.css" />
+	<script type="text/javascript" src="register/register.js"></script>
+	<script type="text/javascript" src="js/applaudweb.js"></script>
+   <!--ANALYTICS
+	<script type="text/javascript">
+ 	 var _gaq = _gaq || [];
+ 	 _gaq.push(['_setAccount', 'UA-26470649-1']);
+  	_gaq.push(['_trackPageview']);
+ 	 (function() {
+    	var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    	ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    	var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  	})();
+	</script>
+	<!--ANALYTICS-->
+</head>
+<body>
+<header>
+	<h4><a href="http://applaudcloud.com"><img src="icon/applaudcloud.png" alt="AppLaud Cloud"></a></h4>
+	<h4><a href="http://www.mobiledevelopersolutions.com" target='_blank'>by Mobile Developer Solutions</a></h4>
+</header>
+    <section>  
+      	<div id="intro-reg" class="container ui-widget ui-widget-content ui-corner-all"> 
+     	<h2>Step 2: Register <span style="font-size:22px;color:#cdd4d0;">&mdash;&gt; Step 3: Start Coding!</span></h2>
+		<p>Almost there.. just enter your name, company or organization, then select a username. That&#39;s it!</p>	
+		<div class="clear"></div>
+ 		</div> 
+	</section>	 
+
+    <section> 
+	<div  id="reg-content" class="container ui-widget ui-widget-content ui-corner-all">
+	<section>
+		<form method="post" action="process.php">
+			<div id="email_title"></div>
+			<div class="element">
+				<label>Name</label>
+				<input type="text" name="name" class="text" autofocus="autofocus" />
+			</div>
+			<div class="element">
+				<label>Company</label>
+				<input type="text" name="company" class="text" />
+			</div>
+			<div class="element">
+				<label>Request User ID</label>
+				<input type="text" name="userid" class="text" />
+			</div>
+
+			<div class="element">
+				<button type="submit" name="submit" id="submit-button">Submit</button>
+				<div class="loading"></div>		
+				<div class="clear"></div>		
+			</div>
+		</form>
+	</section>
+	</div>	<!-- /content -->
+
+	<section>
+	<div id="reg-accordion">
+		<div>
+			<h3><a href="#">Why must I register for AppLaud?</a></h3>
+			<div>
+			You've already signed in using Open ID, now you just need to pick a user ID
+			so we can create your own private workspace in the cloud. You don't need to remember
+			your AppLaud user ID, only your OpenID name and password (which we don't store or
+			even see - read more about Open ID on the <a href="login.html" target='_blank'> login page</a>).<br/><br/>
+			AppLaud Cloud is free and open source! Read more about licensing on the FAQ page.
+			</div>
+		</div>
+		<div>
+			<h3><a href="#">What happens after I register?</a></h3>
+			<div>You will be taken to your AppLaud home page (bookmark it!) and can immediately
+			start creating AppLaud projects. The starting page will have a Getting Started cheat
+			sheet, and an easy-to-find Help tab.</div>
+		</div>
+		<div>
+			<h3><a href="#">How can I give feedback or contact other AppLaud developers?</a></h3>
+			<div>Join the <a href="https://groups.google.com/forum/#!forum/applaud-cloud" target='_blank'>Google Group</a>.</div>
+		</div>
+	</div>
+	</section>
+    </section>
+	
+	<div id="reg-dialog" class="ui-state-highlight" title="AppLaud Registration Error">
+		<p><span class="ui-icon ui-icon-alert" style="float: left; margin-right: .3em;"></span>
+		User ID <span id="askeduserid"></span> is already taken. Please choose another one.</p>
+	</div>
+	<footer>
+		<div>
+		<section id="about">
+				<h3>About</h3>
+				<ul>
+				<li><a href="http://www.mobiledevelopersolutions.com/home/about" target='_blank'>Who</a></li>
+				<li><a href="https://groups.google.com/forum/#!forum/applaud-cloud" target='_blank'>AppLaud Forum</a></li>
+				</ul>
+		</section>
+		<section id="links">
+				<h3>Links</h3>
+			<ul>
+				<li><a href="http://www.phonegap.com/" target='_blank'>PhoneGap</a></li>
+				<li><a href="http://jquerymobile.com/" target='_blank'>jQuery Mobile</a></li>
+				<li><a href="http://ace.ajax.org/" target='_blank'>Ace Editor</a></li>
+				<li><a href="http://phonegap.github.com/weinre/" target='_blank'>Weinre</a></li>
+				<li><a href='http://ripple.tinyhippos.com/' target='_blank'>Ripple</a></li>
+			</ul>
+		</section>
+				<section id="documentation">
+				<h3>Documentation</h3>
+			<ul>
+				<li><a href="applauddoc.html" target='_blank'>AppLaud Documentation</a></li>
+				<li><a href="http://docs.phonegap.com/en/1.1.0/index.html" target='_blank'>PhoneGap 1.1.0 Docs</a></li>
+				<li><a href="http://jquerymobile.com/demos/1.0rc1/" target='_blank'>jQuery Mobile RC1 Docs and Demos</a></li>
+				<li><a href="http://phonegap.github.com/weinre/" target='_blank'>Weinre Docs</a></li>
+				<li><a href='http://rippledocs.tinyhippos.com/index.html' target='_blank'>Ripple Docs</a></li>
+			</ul>
+		</section>
+		</div>
+	    <div class="copyright">&copy; 2011 <a href="http://www.mobiledevelopersolutions.com">Mobile Developer Solutions</a></div>
+	</footer>
+</body>
+</html>

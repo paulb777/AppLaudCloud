@@ -1,0 +1,554 @@
+<!DOCTYPE HTML>
+<HTML>
+<HEAD>
+	<META http-equiv="content-type" content="text/html; charset=utf-8">
+
+	<TITLE>AppLaud</TITLE>
+	
+	<!-- DEVELJQ-->
+    <link rel="stylesheet" href="css/styles.css" type="text/css" media="screen" charset="utf-8">
+    <link rel="stylesheet" href="css/navbar.css" type="text/css" media="screen" charset="utf-8">
+		<LINK rel="stylesheet" type="text/css" href="jquery/themes/startAppLaud/jquery-ui-1.8.16.custom.css">
+	<LINK rel="stylesheet" type="text/css" href="jquery/layout-29.15.css">
+	<LINK rel="stylesheet" type="text/css" href="jquery/jquery.contextMenu.css">
+
+	<SCRIPT type="text/javascript" src="jquery/jquery-1.6.4.min.js"></SCRIPT>
+<SCRIPT type="text/javascript" src="jquery/jquery-ui-1.8.16.custom.min.js"></SCRIPT>
+	<SCRIPT type="text/javascript" src="jquery/jquery.layout-29.15.min.js"></SCRIPT>
+	<SCRIPT type="text/javascript" src="jquery/ui.tabs.closable.min.js"></SCRIPT>
+	<SCRIPT type="text/javascript" src="jquery/jquery.jstree.js"></SCRIPT>
+	<SCRIPT type="text/javascript" src="jquery/jquery.hotkeys.js"></SCRIPT>
+	<SCRIPT type="text/javascript" src="jquery/jquery.cookie.js"></SCRIPT>
+	<SCRIPT type="text/javascript" src="jquery/jquery.form.js"></SCRIPT>
+	<SCRIPT type="text/javascript" src="jquery/jquery.contextMenu.js"></SCRIPT>
+	<!-- DEVELJQ-->
+	<!--PACKAGEJQ
+	<LINK rel="stylesheet" type="text/css" href="jquery-rest.css">
+	<LINK rel="stylesheet" type="text/css" href="themes/startAppLaud/jquery-ui-1.8.16.custom.css">
+
+	<SCRIPT type="text/javascript" src="jquery-all.js"></SCRIPT>
+	<!--PACKAGEJQ-->
+	
+	<!-- theme switcher -->
+<!-- 	<SCRIPT type="text/javascript" src="../lib/js/debug.js"></SCRIPT>
+    <SCRIPT type="text/javascript" src="../lib/js/themeswitchertool.js"></SCRIPT>  -->   
+        <!-- 
+ 
+    AppLaud
+      version Alpha 1
+    
+    -->     
+   <!--ANALYTICS
+	<script type="text/javascript">
+ 	 var _gaq = _gaq || [];
+ 	 _gaq.push(['_setAccount', 'UA-26470649-1']);
+  	_gaq.push(['_trackPageview']);
+ 	 (function() {
+    	var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    	ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    	var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  	})();
+	</script>
+	<!--ANALYTICS-->
+</HEAD>
+<BODY>
+
+	<div class="ui-layout-north" 
+		onmouseover="$('body').layout().allowOverflow('north')"
+		onmouseout="$('body').layout().resetOverflow(this)">
+		<div id="nav" class="ui-corner-all ui-widget-header">
+			<ul>
+				<li><a href="#">New</a>
+					<ul class="submenu">
+						<li><a href="#" id="new_project"> Project </a></li>
+						<li><a href="#" id="new_import_project"> Import Project </a></li>
+						<li><a href="#" id="add_folder"> Folder</a></li>
+						<li><a href="#" id="add_default"> File</a></li>
+						<li><a href="#" id="nav-upload"> Upload</a></li>
+					</ul></li>
+
+				<li><a href="#">File</a>
+					<ul class="submenu">
+						<li><a href="#" id="nav-save"> Save </a></li>
+						<li><a href="#" id="nav-save-as"> Save As </a></li>
+						<li><a href="#" id="nav-save-all"> Save All </a></li>
+						<li><a href="#" id="open"> Open </a></li>
+						<li><a href="#" id="rename"> Rename</a>	</li>
+						<li><a href="#" id="remove"> Delete</a>	</li>
+						<li><a href="#" id="refresh"> Refresh</a></li>
+
+					</ul></li>
+					
+				<li><a href="#">Edit</a>
+					<ul class="submenu">
+						<li><a href="#" id="cut"> Cut</a></li>
+						<li><a href="#" id="copy"> Copy</a></li>
+						<li><a href="#" id="paste"> Paste</a></li>
+						<li><a href="#" id="nav-find"> Find</a></li>
+<!-- 						<li><a href="/download?/e1/bin/app_e1-basic.apk" id="nav-dl-dtest"> Download Exists</a></li>
+						<li><a href="/download?foo00dsasdf" id="nav-dl-dtest"> Download Doesn't Exists</a></li>
+						<li><a href="#" id="nav-apks-test"> A pks</a></li> -->
+					</ul></li>
+					
+				<li><a href="#">Emulate</a>
+					<ul class="submenu">
+						<li><a href="#" id="nav-emulate-ripple"> Ripple Emulator </a></li>
+					</ul></li>
+					
+				<li><a href="#">Debug</a>
+					<ul class="submenu">					
+						<li><a href="#" id="nav-debug-weinre"> Weinre Controller</a></li>
+				</ul></li>
+					
+				<li><a href="#">Package</a>
+					<ul class="submenu">
+						<li><a href="#" id="nav-build-basic"> Basic Build</a></li>
+						<li><a href="#" id="nav-build-weinre"> Debug (weinre) Build</a></li>
+						<li><a href="#" id="nav-build-release"> Release Build </a></li>
+					</ul></li>
+
+				<li><a href="#">Preferences</a>
+					<ul class="submenu">
+						<li><a href="#" id='nav-pref-editor'>Editor</a>	</li>
+						<li><a href="#" id='nav-pref-logout'>Log Out</a>	</li>
+					</ul></li>
+					
+				<li><a href="#">Help</a>
+									<ul class="submenu">
+						<li><a href="applauddoc.html#user-guide" target="_blank">User Guide</a>	</li>
+						<li><a href="applauddoc.html#navbar" target="_blank">Menu Info</a>	</li>
+						<li><a href="applauddoc.html#right-click" target="_blank">Right Click Info</a>	</li>
+						<li><a href="https://groups.google.com/forum/#!forum/applaud-cloud" target="_blank">AppLaud Forum</a>	</li>
+						<li><a href="https://github.com/ajaxorg/ace/wiki/Default-Keyboard-Shortcuts" target="_blank">Editor Shortcuts</a>	</li>
+					</ul>
+					</li>
+				<li style="float:right;"><span id="login"></span></li>
+				<li style="float:right;margin-right:4em;"><a name="AppLaud" ><img src="icon/applaudbymds.png" alt="AppLaud by MDS" /></a></li>
+			</ul>
+		</div>
+		<div id='north-banner' style="display: none"> </div>
+	</div>
+
+
+	<DIV id="tabs_div" class="ui-layout-center">
+		<UL style="-moz-border-radius-bottomleft: 0; -moz-border-radius-bottomright: 0;">
+
+		</UL>
+		<DIV class="ui-layout-content ui-widget-content ui-corner-bottom" style="border-top: 0; padding-bottom: 1em;">
+
+    <div id="editor" style="display:none">  </div>
+    <div id="editor_help"></div>	
+		</DIV>
+	</DIV>
+
+	<DIV class="ui-layout-west">  
+	
+<!-- 	Initialized from jstree file tree demo -->
+
+<!-- the tree container (notice NOT an UL node) -->
+<div id="projects" class="projects" ></div>
+
+<!-- <div id='alog' style="border:1px solid gray; padding:5px; height:100px; margin-top:15px; overflow:auto; font-family:Monospace;"></div>
+ -->
+<!-- JavaScript necessary for the tree -->
+
+	</DIV>
+
+<!--   <input id="cockpitInput" type="text"/> -->
+  
+  <div id="pop_help" title="Help" style="display:none">
+  	<form class="ui-widget">
+	<fieldset class="ui-widget-content">
+	   <legend></legend>
+  <div id="pop_help_contents">
+  </div></fieldset></form>
+  
+  </div>
+
+  
+<!-- Edit preferences dialog -->
+<div id="edit_preferences" title="Editor Preferences" style="display:none">
+	<form class="ui-widget">
+	<div class="ui-widget-content">
+  <table id="controls">
+    <tr>
+      <td >
+        <label for="mode">Mode</label>
+      </td><td>
+        <select id="mode" size="1">
+          <option value="text">Plain Text</option>
+          <option value="javascript">JavaScript</option>
+          <option value="xml">XML</option>
+          <option value="html">HTML</option>
+          <option value="css">CSS</option>
+          <option value="php">PHP</option>
+          <option value="java">Java</option>
+          <option value="coffee">CoffeeScript</option>
+          <option value="json">JSON</option>
+        </select>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <label for="split">Split</label>
+      </td><td>
+        <select id="split" size="1">
+          <option value="none">None</option>
+          <option value="below">Below</option>
+          <option value="beside">Beside</option>
+        </select>
+      </td>
+    </tr>
+    <tr>
+      <td >
+        <label for="theme">Theme</label>
+      </td><td>
+        <select id="theme" size="1">
+          <option value="ace/theme/textmate">TextMate</option>
+          <option value="ace/theme/eclipse">Eclipse</option>
+          <option value="ace/theme/dawn">Dawn</option>
+          <option value="ace/theme/idle_fingers">idleFingers</option>
+          <option value="ace/theme/pastel_on_dark">Pastel on dark</option>
+          <option value="ace/theme/twilight">Twilight</option>
+          <option value="ace/theme/clouds">Clouds</option>
+          <option value="ace/theme/clouds_midnight">Clouds Midnight</option>
+          <option value="ace/theme/kr_theme">krTheme</option>
+          <option value="ace/theme/mono_industrial">Mono Industrial</option>
+          <option value="ace/theme/monokai">Monokai</option>
+          <option value="ace/theme/merbivore">Merbivore</option>
+          <option value="ace/theme/merbivore_soft">Merbivore Soft</option>
+          <option value="ace/theme/vibrant_ink">Vibrant Ink</option>
+          <option value="ace/theme/solarized_dark">Solarized Dark</option>
+          <option value="ace/theme/solarized_light">Solarized Light</option>
+        </select>
+      </td>
+    </tr>
+    <tr>
+      <td >
+        <label for="fontsize">Font Size</label>
+      </td><td>
+        <select id="fontsize" size="1">
+          <option value="10px">10px</option>
+          <option value="11px">11px</option>
+          <option value="12px" selected="selected">12px</option>
+          <option value="14px">14px</option>
+          <option value="16px">16px</option>
+          <option value="20px">20px</option>
+          <option value="24px">24px</option>
+        </select>
+      </td>
+    </tr>
+    <tr>
+      <td >
+        <label for="select_style">Full Line Selection</label>
+      </td><td>
+        <input type="checkbox" name="select_style" id="select_style" checked>
+      </td>
+    </tr>
+    <tr>
+      <td >
+        <label for="highlight_active">Highlight Active Line</label>
+      </td><td>
+        <input type="checkbox" name="highlight_active" id="highlight_active" checked>
+      </td>
+    </tr>
+    <tr>
+      <td >
+        <label for="show_hidden">Show Invisibles</label>
+      </td><td>
+        <input type="checkbox" name="show_hidden" id="show_hidden">
+      </td>
+    </tr>
+    <tr>
+      <td >
+        <label for="show_hscroll">Persistent HScroll</label>
+      </td><td>
+        <input type="checkbox" name="show_hscroll" id="show_hscroll">
+      </td>
+    </tr>
+    <tr>
+      <td >
+        <label for="keybinding">Key Binding</label>
+      </td><td>
+        <select id="keybinding" size="1">
+          <option value="ace">Ace</option>
+          <option value="vim">Vim</option>
+          <option value="emacs">Emacs</option>
+          <option value="custom">Custom</option>
+        </select>
+      </td>
+    </tr>
+    <tr>
+      <td >
+        <label for="soft_wrap">Soft Wrap</label>
+      </td><td>
+        <select id="soft_wrap" size="1">
+          <option value="off">Off</option>
+          <option value="40">40 Chars</option>
+          <option value="80">80 Chars</option>
+          <option value="free">Free</option>
+        </select>
+      </td>
+    </tr>
+    <tr>
+      <td >
+        <label for="show_gutter">Show Gutter</label>
+      </td><td>
+        <input type="checkbox" id="show_gutter" checked>
+      </td>
+    </tr>
+    <tr>
+      <td >
+        <label for="show_print_margin">Show Print Margin</label>
+      </td><td>
+        <input type="checkbox" id="show_print_margin">
+      </td>
+    </tr>
+    <tr>
+      <td >
+        <label for="soft_tab">Use Soft Tab</label>
+      </td><td>
+        <input type="checkbox" id="soft_tab" checked>
+      </td>
+    </tr>
+    <tr>
+      <td >
+        <label for="highlight_selected_word">Highlight selected word</label>
+      </td><td>
+        <input type="checkbox" id="highlight_selected_word" checked>
+      </td>
+      </tr>
+      <tr>
+      <td >
+        <label for="enable_behaviours">Enable Behaviours</label>
+      </td>
+      <td>
+        <input type="checkbox" id="enable_behaviours" checked>
+      </td>
+    </tr>
+      <tr>
+      <td >
+        <label for="automatic_saveall">Automatic Save All</label>
+      </td><td>
+        <select id="automatic_saveall" size="1">
+          <option value="off">Off</option>
+          <option value="10">10 Seconds</option>
+          <option value="60" selected="selected">1 Minute</option>
+          <option value="300">5 Minutes</option>
+        </select>
+      </td>
+    </tr>
+ </table>
+        
+	</div>
+	<br>
+	</form>
+</div>
+
+<div id="new_project_dialog" title="New Project" style="display:none">
+	<form class="ui-widget">
+	<div class="ui-widget-content">
+  <table id="controls">
+ 
+    <tr>
+      <td >
+        <label for="npd-project">Project</label>
+      </td><td>
+        <input type="text" id="npd-project" placeholder="enter project name">
+      </td>
+ </tr>
+
+		<tr>
+			<td><label for="npd-android-target">Min Android Version</label></td>
+			<td><select id="npd-android-target" size="1">
+					<option value="android-7">Android 2.1</option>
+					<option value="android-8" selected="selected">Android 2.2</option>
+					<option value="android-9">Android 2.3</option>
+					<option value="android-11">Android 3.0</option>
+					<option value="android-12">Android 3.1</option>
+					<option value="android-13">Android 3.2</option>
+			</select></td>
+		</tr>
+		
+		<tr>
+			<td><label for="npd-template">Project Template</label></td>
+			<td><select id="npd-template" size="1">
+			</select></td>
+		</tr> 
+<!--  -->
+<!-- 		<tr>
+      <td >
+        <label for="npd_include_jqm">Include jQuery Mobile</label>
+      </td><td>
+        <input type="checkbox" name="npd_include_jqm" id="npd_include_jqm">
+      </td>
+    </tr> -->
+    
+<!--         <tr>
+      <td >
+        <label for="npd-app">Application</label>
+      </td><td>
+        <input id="npd-app" value="app_">
+      </td>
+    </tr> -->
+    
+        <tr>
+      <td >
+        <label for="npd-package">Package</label>
+      </td><td>
+        <input id="npd-package" value="com.example.">
+      </td>
+    </tr>
+    
+<!--         <tr>
+      <td >
+        <label for="npd-activity">Activity</label>
+      </td><td>
+        <input id="npd-activity" value="activity_">
+      </td>
+    </tr> -->
+ 
+ </table>
+        
+	</div>
+	<br>
+	</form>
+</div>
+
+  <div id="project_import_dialog" >
+      <form id="projectImportForm" action="/uploadFile" enctype="multipart/form-data" method="post">
+      	<div class="ui-widget-content">	           
+	  		<table id="controls-pid">   
+        		<tr>
+			      <td >
+			        <label for="pid-name">Project Name</label>
+			      </td><td>
+			        <input type="text" id="pid-name" placeholder="enter project name">
+			      </td>
+			 	</tr>	
+			 	<tr>
+			      <td >
+			        <label for="pid-file">Select .zip file</label>
+			      </td><td>
+			         <input type="file" name="upload"><br>
+			      </td>
+			 	</tr>
+			 </table>			 
+		</div>
+		   <input type="submit" value="Import Project">
+    </form>
+</div>
+
+
+<!-- Find/Replace dialog -->
+<div id="find_replace" title="Find/Replace Dialog" style="display:none">
+	<form class="ui-widget">
+		<table>
+		  <tr>
+		    <td>
+		      <label for="find_replace_find">Find</label>
+		    </td>
+		    <td>
+		      <input type="text"  id="frfind"  class="text ui-widget-content ui-corner-all" style="width:300px" />
+		    </td>
+		  </tr>
+		  <tr>
+		    <td>
+		      <label for="find_replace_replace">Replace</label>
+		    </td>
+		    <td>
+		      <input type="text"  id="frreplace"  style="width:300px" class="text ui-widget-content ui-corner-all" />
+		    </td>
+		  </tr>
+		</table>
+	<br>
+	</form>
+</div>
+
+  
+  <div id="upload_dialog" >
+      <form id="uploadForm" action="/upload" enctype="multipart/form-data" method="post">
+<!--     <input type="text" name="title"><br> -->
+    <input type="file" name="upload" multiple="multiple"><br>
+    <input type="submit" value="Upload">
+    </form>
+</div>
+
+  <div id="release_dialog" >
+      <form id="releaseForm" action="/uploadFile" enctype="multipart/form-data" method="post">
+      	<fieldset class="ui-widget-content">
+	        <legend>Select Keystore</legend>
+	            <input type="file" name="upload"><br>
+	  		<table id="controls-rb">
+    
+        		<tr>
+			      <td >
+			        <label for="nrd-alias">Alias</label>
+			      </td><td>
+			        <input type="text" id="nrd-alias" placeholder="enter alias">
+			      </td>
+			 	</tr>
+    
+    			 <tr>
+			      <td >
+			        <label for="nrd-ks-password">Keystore Password</label>
+			      </td><td>
+			        <input type="password" id="nrd-ks-password" placeholder="enter keystore password">
+			      </td>
+			 	</tr>
+			 	
+    			<tr>
+			      <td >
+			        <label for="nrd-alias-password">Alias Password</label>
+			      </td><td>
+			        <input type="password" id="nrd-alias-password" placeholder="enter alias password">
+			      </td>
+			 	</tr>			 	
+			 </table>
+		</fieldset>
+		   <input type="submit" value="Upload Keystore and Build Release">
+    </form>
+</div>
+
+  
+  <div id="build_dialog" >
+</div>  
+
+  <div id="generic_dialog" >
+</div>  
+
+
+<ul id="tabContextMenu" class="contextMenu">
+    <li class="closeOthers">
+        <a href="#closeOthers">Close Others</a>
+    </li>
+    <li class="closeAll">
+        <a href="#closeAll">Close All</a>
+    </li>
+
+</ul>
+
+<!-- DEVEL-->
+  <script type="text/javascript">
+      var require = {
+          paths: {
+              edit: "../edit",
+              project_nav: "../project_nav",
+              ace: "../ace/lib/ace",
+              cockpit: "../ace/support/cockpit/lib/cockpit",
+              pilot: "../ace/support/pilot/lib/pilot"
+          }
+      };
+  </script>
+  <script src="edit/require.js" data-main="edit/boot" type="text/javascript" charset="utf-8"></script>
+<!--DEVEL -->
+
+<!--PACKAGE
+  <script src="applaud.js" data-ace-base="src" type="text/javascript" charset="utf-8"></script>
+  <script type="text/javascript" charset="utf-8">
+    require("boot");
+  </script>
+<!--PACKAGE-->
+
+</BODY>
+</HTML>

@@ -1,0 +1,112 @@
+/*
+	 *	Rules for navigation bars
+	 */
+	
+/*
+Header/Toolbar
+#2191c0		277673
+#4297d7		429780
+#eaf5f7		eaf7f3
+#d8e7f3		c7d9cb
+
+Content
+#fcfdfd		same
+#a6c9e2		a6c9bb
+#222222		same
+#0078ae		1f6060
+
+Clickable - default
+#0078ae		1f6060
+#77d5f7		77d2ca
+#ffffff		same
+#e0fdff		e0f5ff
+
+Clickable - hover
+#79c9ec		79ddd5
+#448dae		4a9e9f
+#026890		02759c
+#056b93		05929b
+
+Clickable - active
+#6eac2c
+#acdd4a
+#ffffff
+#f5e175
+
+Highlight
+
+*/	
+	 
+#nav {
+	height: 32px;
+	line-height: 32px;
+	/* background: #277673; /* dark green 134f5c;  old blue #3B5998; */
+	padding: 0 10px;
+	/* overflow: scroll; */
+}
+
+#nav ul,#nav ul li {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+
+#nav ul li {
+	float: left;
+	display: block;
+}
+
+#nav ul li a:link,#nav ul li a:visited, #login {
+	color: #FFF;
+	font-size: 14px;
+	font-weight: bold;
+	text-decoration: none;
+	padding: 0 20px 0 6px;;
+	display: block;
+}
+
+
+
+#nav ul li a:hover {
+	color: #8faeab; /* eeeeee;  #EBEFF7 */
+}
+
+#nav ul li ul li {
+	float: none;
+	display: block;
+}
+
+#nav ul li ul li a:link,#nav ul li ul li a:visited {
+	color: #444;
+	font-size: 11px;
+	font-weight: bold;
+	text-decoration: none;
+	padding: 0 10px;
+	clear: both;
+	border-bottom: solid 1px #DEDEDE;
+}
+
+#nav ul li ul li a:hover {
+	color: #134f5c; /* lightish green #277673;  #3B5998;  */
+	background: #eeeeee; /* EBEFF7; */
+}
+
+.submenu {
+	position: absolute;
+	width: 160px;
+	background: #fff;
+	padding: 10px;
+	border: solid 1px #134f5c; /* old blue #2E4B88; */
+	border-top: none;
+	z-index: 1000;
+	display: none;
+	line-height: 26px;
+}
+
+#login {
+	float: right;
+	/* display: block; */
+	height: 32px;
+	line-height: 32px;
+	padding: 0 10px;
+}

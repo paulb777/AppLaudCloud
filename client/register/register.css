@@ -1,0 +1,92 @@
+.element * {
+	padding:2px; 
+	margin:2px; 
+/* 	font-family:arial; */
+	font-size: 14px;
+/* 	font: 110% "Trebuchet MS", sans-serif; */
+}
+.element label {
+	float:left; 
+	width:135px;
+}
+.element input.text {
+	float:left; 
+	width:340px;
+	height: 20px; 
+	color: #073f2f;
+	font-size: 14px;
+	padding-left:20px;
+}
+
+.element .highlight {
+	border:2px solid #9F1319;
+	background:url(iconCaution.gif) no-repeat 2px;
+	background-color: #fff;
+}
+.element #submit-button {
+	float:right;
+	margin-right:20px;
+	margin-top: 10px;
+}
+
+.loading {
+	float:right; 
+	margin-top:10px;
+	background:url(ajax-loader.gif) no-repeat 1px; 
+	height:28px; 
+	width:28px; 
+	display:none;
+}
+
+.clear {
+	clear:both
+}
+
+#askeduserid { font-weight: bold; color: #e22;}
+
+/* body{text-align:center;}
+.clear {
+	clear:both
+}
+.block {
+	width:400px;
+	margin:0 auto;
+	text-align:left;
+}
+.element * {
+	padding:5px; 
+	margin:2px; 
+	font-family:arial;
+	font-size:12px;
+}
+.element label {
+	float:left; 
+	width:175px;
+	font-weight:700
+}
+.element input.text {
+	float:left; 
+	width:270px;
+	padding-left:20px;
+}
+.element .textarea {
+	height:120px; 
+	width:270px;
+	padding-left:20px;
+}
+.element .highlight {
+	border:2px solid #9F1319;
+	background:url(iconCaution.gif) no-repeat 2px
+}
+.element #submit {
+	float:right;
+	margin-right:10px;
+}
+.loading {
+	float:right; 
+	background:url(ajax-loader.gif) no-repeat 1px; 
+	height:28px; 
+	width:28px; 
+	display:none;
+}
+ */
