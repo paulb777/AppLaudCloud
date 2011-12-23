@@ -3,6 +3,7 @@ define(function(require, exports, module) {
     var connection = require('project_nav/connection');
 
     var dialogInit = false;
+    var dialogId = "#new_project_dialog";
     
     // Initialize project template options
     $.post("template", {}, function(r) {
@@ -54,9 +55,13 @@ define(function(require, exports, module) {
 
     var createProject = function() {
         var project = document.getElementById("npd-project").value;
-//        var app = document.getElementById("npd-app").value;
+        if (project === '') { 
+            alert('Enter a Project name');
+            return;
+        } else {
+            $(dialogId).dialog('close');
+        }
         var pkg = document.getElementById("npd-package").value;
-//        var activity = document.getElementById("npd-activity").value;
         var opts = document.getElementById("npd-template").value;
         opts = opts.split(':');
         var template = opts[0];
@@ -70,19 +75,9 @@ define(function(require, exports, module) {
                     alert('Error creating project ' + project + ': ' + r.error);
                 }
             }, error : function(r, m) { alert ('Internal Error: project creation server connection lost ' + JSON.stringify(r) + m); }});
-//        connection.post("/phonegapCreate", {project: project, pkg : pkg, 
-//            template : template, jqm : jqm, target : target}, function(r) {
-//                if (r.success) {
-//                    success(project);
-//                } else {
-//                    alert('Error creating project ' + project + ': ' + r.error);
-//                }
-//            });
     };
 
     exports.run = function() { 
-        var dialogId = "#new_project_dialog";
-
         if (dialogInit) {
             $(dialogId).dialog('open');
         } else {
@@ -96,7 +91,7 @@ define(function(require, exports, module) {
                 buttons: {
                     "Create": function() {
                         createProject();
-                        $(dialogId).dialog('close');
+                        return false;
                     },
                     "Close": function() {
                         $(dialogId).dialog('close');
@@ -107,7 +102,7 @@ define(function(require, exports, module) {
             $(dialogId).keyup(function(e) {
                 if (e.keyCode === 13) {
                     createProject();
-                    $(dialogId).dialog('close');
+                    return false;
                 }
             });
             $('#npd-project').keyup(function(e) {

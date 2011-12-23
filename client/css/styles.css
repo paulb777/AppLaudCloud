@@ -87,7 +87,7 @@ tabs1 {
     text-align: left;
 }
 
-#cockpitInput {
+/* #cockpitInput {
     position: absolute;
     left: 280px;
     right: 0px;
@@ -106,9 +106,13 @@ tabs1 {
     -moz-border-radius-topright: 10px;
     border-top-left-radius: 4px; border-top-right-radius: 4px;
     background: #DDD; color: #000;
-}
+} */
 
 img.floatRight {
 	float: right;
 	margin: 4px;
+}
+
+.ui-layout-pane { /* make padding smaller than default */
+	padding:	2px; 
 }

@@ -94,11 +94,11 @@ copy({
 
 copy({
     source: [ // "client/css/applaudweb.css",
-              "client/css/styles.css", 
               "client/css/navbar.css",
 //              "client/jquery/themes/ui-lightness/jquery-ui-1.8.14.custom.css",  // images mess up if not hard-coded
               "client/jquery/layout-29.15.css",
               "client/jquery/jquery.contextMenu.css",
+              "client/css/styles.css", 
 //              "jquery/themes/default/style.css"   // hardcoded for jstree
               ],
 //    filter: [ copy.filter.addDefines ],  - only works if require already there
