@@ -50,6 +50,7 @@ define(function(require, exports, module) {
             if (e.keyCode === 13) {   // Same as find click
                 var f = getFindVal();
                 editor.find(f);
+                return false;
             }
         });  
     };

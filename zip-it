@@ -1,0 +1,19 @@
+rm z.zip
+rm -rf build/client/register
+rm -rf build/client/openid
+rm -rf build/client/icon
+rm -rf build/server
+rm -rf build/client/ripple
+rm -rf build/client/js
+rm -rf build/client/src
+cp -rp client/openid build/client/
+cp -rp client/register build/client/
+cp -rp client/icon build/client/
+cp -rp server build/
+cp -rp client/ripple build/client/
+cp -rp client/js build/client/
+cp -p client/edit/help.js build/client/edit/
+cp -p client/css/applaudweb.css build/client/css/
+cp -rp client/ace/build/src build/client/
+cp -rp client/favicon.ico build/client/
+zip -rq z build/client build/server 

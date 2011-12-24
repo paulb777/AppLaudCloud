@@ -103,13 +103,13 @@ $('#page-map').live("pageinit", function() {
              'labelAnchor': new google.maps.Point(44, 0), 'labelClass': "marker-labels", 'labelStyle': {opacity: 0.75}, 'labelVisible': true }, 
              function(map, marker) {
                  var markerId = marker.__gm_id;
-                 $('#markerdiv').append('<div class="mclass' + markerId + '" style="display:none;"> <form onsubmit="return false;" method="get" action="/">' +                              
+                 $('#markerdiv').append('<div class="mclass' + markerId + '" style="display:none;">' +                              
                    '<div data-role="fieldcontain"><label for="tag' + markerId + '">Marker Title<br/></label><input type="text" size="24" maxlength="30" name="tag' + markerId + '" id="tag' + markerId + '" value="" /></div>' +
                    '<div data-role="fieldcontain"><label for="address' + markerId + '">Address<br/></label><input type="text" size="24" maxlength="30" name="address' + markerId + '" id="address' + markerId + '" value="" /></div>' +
                    '<div data-role="fieldcontain"><label for="state' + markerId + '">City, State<br/></label><input type="text" size="24" maxlength="30" name="state' + markerId + '" id="state' + markerId + '" value="" /></div>' +
                    '<div data-role="fieldcontain"><label for="country' + markerId + '">Country<br/></label><input type="text" size="24" maxlength="30" name="country' + markerId + '" id="country' + markerId + '" value="" /></div>' +
                    '<div data-role="fieldcontain"><label for="comment' + markerId + '">Comment<br/></label><textarea maxlength="64" cols=24 rows=3 name="comment' + markerId + '" id="comment' + markerId + '" value="" /></textarea></div>' +                              
-                   '</form></div>');
+                   '</div>');
                  getGeoData(marker);
              }, MarkerWithLabel).dragend( function() {
                  // Marker == this - already has new position in it

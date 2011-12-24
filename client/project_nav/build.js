@@ -99,6 +99,7 @@ define(function(require, exports, module) {
             alert('Please select a project to emulate');
             return;
         }
+        connection.post('ripple');
         var origin = node.origin;
         window.open(origin + '/ripple/index.html?' + origin + '/workspace' + 
                 project + '/assets/www/index.html', '_blank');
