@@ -1,0 +1,15 @@
+/* JQM: margin-left, margin-right: 90px */
+.ui-header .ui-title {
+	margin-right:20px;
+	margin-left:20px;
+}
+
+/* JQM: margin-left, margin-right: 90px
+ *       white-space:nowrap */
+.ui-footer .ui-title {
+	margin-right:20px;
+	margin-left:20px;
+	white-space:normal; 
+ }
+
+ 

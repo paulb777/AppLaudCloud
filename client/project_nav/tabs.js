@@ -19,24 +19,29 @@ define(function(require, exports, module) {
             env.editor.focus();
         };
         
-        var doClose = function(filename) {
-            sessions.remove(filename);
+        var doClose = function(session, automatic) {
+            if (session.dirty && !confirm("Do you really want to close "
+                            + session.filename + " without saving it?")) {
+                return false;
+            }
+            if (!automatic) {
+                $(tabsDiv).tabs('remove', '#' + session.name);
+            }
+            sessions.remove(session.filename);
             tabsOpen--;
             if (tabsOpen === 0) {
                 $('#editor').hide();
                 $('#editor_help').show();
             }
+            return true;
         };
         
         var closeOthers = function(keep) {
             var i;
             var sessionList = sessions.getSessionsArray();
             for (i in sessionList) {
-                var filename = sessionList[i].filename;
-                var t = sessions.getByFilename(filename);
-                if (t !== keep) {
-                    $(tabsDiv).tabs('remove', '#' + sessions.getByFilename(filename));
-                    doClose(filename);
+                if (sessionList[i].name !== keep) {
+                    doClose(sessionList[i], false);
                 }
             }
         };
@@ -88,17 +93,9 @@ define(function(require, exports, module) {
                     },
                     closableClick : function(event, ui) {
                         // always just return true if not dirty
-                        var filename = ui.tab.text;
-                        var confirmed = true;
+ //                       var filename = ui.tab.text;
                         var session = sessions.get(ui.panel.id);
-                        if (session.dirty) {
-                            confirmed = confirm("Do you really want to close "
-                                        + filename + " without saving it?");
-                        }
-                        if (confirmed) {
-                            doClose(session.filename);
-                        }
-                        return confirmed;
+                        return doClose(session, true);
                     },
                     select : function(event, ui) {
                         selectTab(ui.panel.id);

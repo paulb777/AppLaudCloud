@@ -1,0 +1,17 @@
+.ui-header .ui-title { margin-right:20px; margin-left:20px; }
+.ui-footer .ui-title { margin-right:20px; margin-left:20px; white-space:normal; }
+.ui-btn-inner { padding: .6em 7px; }
+
+#page-map, #map-content, #map_canvas { width: 100%; height: 100%; padding: 0; }
+
+/* for fading msg box */
+.ui-body-e { border: 1px solid #008595; color: #333; font-size: 16px; text-shadow: none; background: #cceeff; padding: 0.3em 0.4em; width: 240px;}
+.ui-body-e#intro { font-size: 14px; padding: 0.3em 0.4em;}
+
+a.mbtn{ background: #008595; display: inline-block; margin: 0.3em 1.5em; padding: 5px 8px 6px; color: #eef; text-decoration: none; font-size: 15px; font-weight: bold; line-height: 1; -webkit-border-radius: 5px; -moz-border-radius: 5px; -webkit-box-shadow: 2px 2px 5px #ccc; -moz-box-shadow: 2px 2px 5px #ccc; text-shadow: 0 1px 1px #2A3333; position: relative;}
+#mask { position:absolute; z-index:9000; background-color:#555; display:none; top: 0px; left: 0px;}
+
+/* reduce padding in listview */
+.ui-li .ui-btn-inner .ui-link-inherit { padding: .3em 25px .3em 10px; display: block; }
+
+.marker-labels { color: #111; background-color: #eef; font-family: "Arial", sans-serif; font-size: 11px; font-weight: bold; text-align: center; width: 80px; border-radius: 5px; box-shadow: 0 0 5px #555; padding: 2px; }

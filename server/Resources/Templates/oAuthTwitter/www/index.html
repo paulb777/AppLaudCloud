@@ -1,0 +1,96 @@
+<!DOCTYPE HTML>
+<html>
+  <head>
+    <meta name="viewport" content="width=screen.width; user-scalable=no" />
+    <meta http-equiv="Content-type" content="text/html; charset=utf-8">
+    <title>AppLaud Cloud: Twitter OAuth Demo</title>
+      <link rel="stylesheet" href="jquery.mobile/jquery.mobile-1.0.min.css" type="text/css">
+      <script type="text/javascript" src="jquery.mobile/jquery-1.6.4.min.js"></script>
+      <script>
+		$(document).bind("mobileinit", function(){
+	  		$.mobile.touchOverflowEnabled = true;
+		});
+      </script>
+      <script type="text/javascript" src="jquery.mobile/jquery.mobile-1.0.min.js"></script>
+	  <script type="text/javascript" src="jsOAuth-1.3.1.min.js"></script>
+	  <script type="text/javascript" charset="utf-8" src="phonegap-1.3.0.js"></script>
+	  <script type="text/javascript" charset="utf-8" src="childbrowser.js"></script>	  
+	  <script type="text/javascript" charset="utf-8" src="main.js"></script>
+	  <style type="text/css">
+ 		  .ui-header .ui-title { margin-right:20px; margin-left:20px; }
+	  </style>    
+
+	<!-- !!! This app needs customization before running.
+		 !!! See README.txt for instructions. -->
+	
+	<!-- CDN Respositories: For production, replace lines above with these uncommented minified versions -->
+	<!-- <link rel="stylesheet" href="http://code.jquery.com/mobile/1.0/jquery.mobile-1.0.min.css" />-->
+	<!-- <script src="http://code.jquery.com/jquery-1.6.4.min.js"></script>-->
+	<!-- <script src="http://code.jquery.com/mobile/1.0/jquery.mobile-1.0.min.js"></script>-->
+	</head>
+  <body onload="init()">
+	<div data-role="page" data-theme="c" id="page-home">
+	<div  data-role="header">
+		<h1>AppLaud Cloud: Twitter Demo</h1>
+	</div>
+	<div data-role="content">
+
+	<p>OAuth Status: <span id="oauthStatus"><strong>Not started</strong></span><p>
+
+	<div id="stage-reading-local-store">
+	<h4>Accessing Local Storage</h4>
+	<p>Found cached Twitter authorization data in localStorage. Verifying authorization..</p>
+	</div>
+	
+	<div id="stage-auth">
+		<h4>1. Twitter OAuthorization</h4>
+		<div data-role=button id='startbutton'>Start Twitter OAuth</div>
+		<p>Start Twitter OAuth verification and follow instructions on
+		Twitter login page. Login data is stored in local storage.</p>
+		<p>Upon successful log in you will be returned
+		to this app and have access to Twitter REST API.</p>
+		<div data-role=button id='networkbutton'>Check Network Connection</div>	
+	</div>
+	
+	<div id="stage-data">
+		<h4>2. Use Twitter</h4>
+		<div id='userInfo'></div>
+		<div data-role="controlgroup">
+			<div data-role=button id='homeTimeline'>Home Timeline</div>
+			<div data-role=button id='mentions'>Mentions</div>
+			<div data-role=button id='tweet'>Tweet!</div>
+		</div>
+  			<span id="textcount"></span>
+			<textarea id="tweettextarea" rows="2" cols="30"></textarea>
+
+		<div id="twitterdata"></div>
+		<hr>
+		<div data-role=button data-inline="true" id='cancel'>Cancel Twitter Session</div>	
+	</div>
+	
+	</div>	
+	</div> <!-- /page-home -->
+	
+	<div data-role="page" data-theme="b" id="page-dialog-confirm">
+	<div data-role="header">
+		<h1>Confirm User</h1>
+	</div>
+		<div data-role="content" data-theme="c">
+			<div id="dialog-confirm-text"></div>
+			<a data-role="button" id="confirm-user" data-theme="b">Continue</a>       
+			<a data-role="button" id="cancel-user" data-theme="c">Cancel</a>    
+		</div>	
+	</div> <!-- /page-dialog-confirm -->
+	
+	<div data-role="page" data-theme="b" id="page-dialog-tweet">
+	<div data-role="header" data-theme="d">
+		<h1>Confirm Tweet</h1>
+	</div>
+		<div data-role="content" data-theme="c">
+			<div id="dialog-tweet-text"></div>
+			<a data-role="button" id="confirm-tweet" data-theme="b">Tweet</a>       
+			<a data-role="button" id="cancel-tweet" data-theme="c">Cancel</a>    
+		</div>
+	</div> <!-- /page-dialog-tweet -->
+  </body>
+</html>

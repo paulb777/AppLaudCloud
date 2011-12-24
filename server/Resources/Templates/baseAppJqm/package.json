@@ -1,0 +1,5 @@
+{
+    "name" : "Base App w/jQM",
+    "jqm" : true,
+    "order" : 1
+}

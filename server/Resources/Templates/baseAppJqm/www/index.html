@@ -1,0 +1,40 @@
+<!DOCTYPE HTML>
+<html>
+  <head>
+    <meta name="viewport" content="width=320; user-scalable=no" />
+    <meta http-equiv="Content-type" content="text/html; charset=utf-8">
+    <title>Base AppLaud App With JQuery Mobile</title>
+      <link rel="stylesheet" href="jquery.mobile/jquery.mobile-1.0.min.css" type="text/css" />
+	  <link rel="stylesheet" href="baseJqm-override.css" type="text/css" />
+	  <script type="text/javascript" src="jquery.mobile/jquery-1.6.4.min.js"></script>
+	  <script type="text/javascript" charset="utf-8" src="phonegap-1.3.0.js"></script>
+	  <script type="text/javascript" src="jquery.mobile/jquery.mobile-1.0.js"></script>
+	  <script type="text/javascript" charset="utf-8" src="baseJqm.js"></script>
+
+	<!-- CDN Respositories: For production, replace lines above with these uncommented minified versions -->
+	<!-- <link rel="stylesheet" href="http://code.jquery.com/mobile/1.0/jquery.mobile-1.0.min.css" />-->
+	<!-- <script src="http://code.jquery.com/jquery-1.6.4.min.js"></script>-->
+	<!-- <script src="http://code.jquery.com/mobile/1.0/jquery.mobile-1.0.min.js"></script>-->
+  </head>
+  <body onload="init();">
+    <div data-role="page" data-theme="b" id="page-home">
+  	<div data-role="header">
+    	<h1>Base App with JQuery Mobile</h1> 
+	</div>
+    <div data-role="content">
+	<p>Your app goes here.</p>
+	
+	<div data-role="collapsible" data-collapsed="true" data-content-theme="b">
+    	<h1>Device Ready Status</h1>
+    	<div><span id="devready">onDevicReady not fired.</span></div>
+    </div>
+
+    <div data-role="button" id="sampleButton">Sample Button</div>
+
+    </div><!-- end jqm content -->
+    <div data-role="footer" data-position="fixed">
+    	<h1>This file is located at assets/www/index.html</h1>
+    </div>
+    </div><!-- end jqm page -->
+  </body>
+</html>

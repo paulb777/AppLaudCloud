@@ -1,0 +1,39 @@
+<!DOCTYPE HTML>
+<html>
+  <head>
+    <meta name="viewport" content="width=screen.width; user-scalable=no" />
+    <meta http-equiv="Content-type" content="text/html; charset=utf-8">
+    <title>Audio Player</title>
+      <link rel="stylesheet" href="jquery.mobile/jquery.mobile-1.0.min.css" type="text/css">
+      <script type="text/javascript" src="jquery.mobile/jquery-1.6.4.min.js"></script>
+      <script type="text/javascript" src="jquery.mobile/jquery.mobile-1.0.min.js"></script>
+      <script type="text/javascript" charset="utf-8" src="phonegap-1.3.0.js"></script>
+	<script type="text/javascript" charset="utf-8" src="main.js"></script>
+
+	<!-- CDN Respositories: For production, replace lines above with these uncommented minified versions -->
+	<!-- <link rel="stylesheet" href="http://code.jquery.com/mobile/1.0/jquery.mobile-1.0.min.css" />-->
+	<!-- <script src="http://code.jquery.com/jquery-1.6.4.min.js"></script>-->
+	<!-- <script src="http://code.jquery.com/mobile/1.0/jquery.mobile-1.0.min.js"></script>-->
+	</head>
+<body>
+ 
+<div data-role="page" data-theme="a" id="page-home">
+	<div data-role="header" data-nobackbtn="true" data-theme="e">
+    <h1>Audio Player</h1>
+	</div> <!-- /header -->
+	
+	<div data-role="content" id="content-manual" data-theme="a">
+	
+		<div data-role="button" id="playaudio" data-theme="e">Play</div>
+		<div data-role="button" id="pauseaudio" data-theme="e">Pause</div>
+		<div data-role="button" id="stopaudio" data-theme="e">Stop</div>	
+	
+		<div class="ui-grid-a">
+			<div class="ui-block-a"> Current: <span id="audio_position">0 sec</span></div>
+			<div class="ui-block-b">Total: <span id=media_dur>0</span> sec</div>
+		</div><!-- /grid-a -->
+
+	</div>  <!-- /content-manual -->
+</div>  <!-- /page -->
+</body>
+</html>

@@ -1,0 +1,6 @@
+{
+    "name" : "PhoneGap Demo w/jQM",
+    "jqm" : true,
+    "order" : 3,
+    "select" : true
+}
