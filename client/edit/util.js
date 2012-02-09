@@ -1,5 +1,7 @@
 define(function(require, exports, module) {
     var sessions = require("sessions"); 
+    var tabs = require("project_nav/tabs");
+    
 //    var EditSession = require("ace/edit_session").EditSession;
 
     // Set up blank editor screen 
@@ -20,7 +22,7 @@ define(function(require, exports, module) {
     };
     // checkIfOpen checks if any of the nodes passed in have open editor buffers.
     // It returns the list
-    exports.checkIfOpen = function(nodeList) {
+    exports.checkIfOpen = function(nodeList, closeThem) {
         var i, j;
         var list = '';
         var sessionList = sessions.getSessionsArray();
@@ -30,7 +32,11 @@ define(function(require, exports, module) {
                 var node = nodeList[j];
                 var title = node.title + ($(node).attr("rel") === 'default' ? '' : "/") ;
                 if (f.search(title) === 0) {
-                    list += f + ' ';
+                    if (closeThem && !sessions.isDirty(sessionList[i])) {
+                        tabs.doClose(sessionList[i], false);
+                    } else {
+                        list += f + ' ';
+                    }
                     break;
                 }
             } 

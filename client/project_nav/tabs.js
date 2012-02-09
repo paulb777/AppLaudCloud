@@ -4,10 +4,27 @@ define(function(require, exports, module) {
     var preferences = require('preferences');
     
     var tabsDiv = '#tabs_div';
+    var tabsOpen = 0;
+    
+    exports.doClose = function(session, automatic) {
+        if (session.dirty && !confirm("Do you really want to close "
+                        + session.filename + " without saving it?")) {
+            return false;
+        }
+        if (!automatic) {
+            $(tabsDiv).tabs('remove', '#' + session.name);
+        }
+        sessions.remove(session.filename);
+        tabsOpen--;
+        if (tabsOpen === 0) {
+            $('#editor').hide();
+            $('#editor_help').show();
+        }
+        return true;
+    };
 
     $(function() {
         var curSelected = null;
-        var tabsOpen = 0;
 
         var selectTab = function(tabName) {
             curSelected = tabName;
@@ -19,29 +36,12 @@ define(function(require, exports, module) {
             env.editor.focus();
         };
         
-        var doClose = function(session, automatic) {
-            if (session.dirty && !confirm("Do you really want to close "
-                            + session.filename + " without saving it?")) {
-                return false;
-            }
-            if (!automatic) {
-                $(tabsDiv).tabs('remove', '#' + session.name);
-            }
-            sessions.remove(session.filename);
-            tabsOpen--;
-            if (tabsOpen === 0) {
-                $('#editor').hide();
-                $('#editor_help').show();
-            }
-            return true;
-        };
-        
         var closeOthers = function(keep) {
             var i;
             var sessionList = sessions.getSessionsArray();
             for (i in sessionList) {
                 if (sessionList[i].name !== keep) {
-                    doClose(sessionList[i], false);
+                    exports.doClose(sessionList[i], false);
                 }
             }
         };
@@ -95,7 +95,7 @@ define(function(require, exports, module) {
                         // always just return true if not dirty
  //                       var filename = ui.tab.text;
                         var session = sessions.get(ui.panel.id);
-                        return doClose(session, true);
+                        return exports.doClose(session, true);
                     },
                     select : function(event, ui) {
                         selectTab(ui.panel.id);

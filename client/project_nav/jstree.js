@@ -146,14 +146,16 @@ define(function(require, exports, module) {
             } else {
                 items = obj[0].title;
             }
-            var open = util.checkIfOpen(obj);
-            if (open) {
-                $.jstree.rollback(data.rlbk);
-                alert('Please close -' + open + '- before doing this delete');
-                return;
-            }
             
             dialog.make("Delete", "Are you sure you want to delete " + items + '?', function() {
+                
+                var unsaved = util.checkIfOpen(obj, true);
+                if (unsaved) {
+                    $.jstree.rollback(data.rlbk);
+                    alert('Please save -' + unsaved + '- before doing this delete');
+                    return;
+                }
+                
                 data.rslt.obj.each(function () {
                     connection.ajax({
                         async : false,
