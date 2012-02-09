@@ -1,0 +1,360 @@
+body {
+	background-color: #F6F4F2;
+	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+	font-size: .9em;
+	line-height: 1.1em;
+	margin: 0px;
+}
+h1,ul,li {
+	margin: 0px;
+	padding: 0px;
+}
+#header {
+	background-color: #515151;
+	background: #515151
+		-webkit-gradient(linear, left top, left bottom, color-stop(0.2, #515151),
+		color-stop(0.8, #302F2D) );
+	border-top: 1px solid #919192;
+	height: 32px;
+	left: 0px;
+	position: fixed;
+	top: 0px;
+	width: 100%;
+	z-index: 1;
+}
+#subheader { display: none; }
+#footer {
+	display: none;
+	background-color: #515151;
+	background: #515151
+		-webkit-gradient(linear, left bottom, left top, color-stop(0.2, #515151),
+		color-stop(0.8, #302F2D) );
+	border-top: 1px solid #919192;
+	height: 32px;
+ 	position: fixed;
+	bottom: 0px;
+	width: 100%;
+	z-index: 1;
+}
+#sidebar {
+	background-color: #ECEAE7;
+	overflow: auto;
+	padding: 30px 2% 20px 0px;
+	text-align: right;
+    /* position: fixed; */
+	float: left;
+	width: 22%; 
+	top: 33px;
+	bottom: 0px;
+	z-index: 1;
+	border-right: 1px solid #999;
+}
+#sidebar ul,#sidebar li {
+	margin: 0px;
+	padding: 0px;
+}
+#sidebar li, #sidebar li a {
+	color: #767573;
+	font-size: 1.06em;
+	list-style: none;
+	margin: 1.05em 0px;
+}
+#scrollable {
+	/* position: fixed; */
+	padding: 20px 2% 0px 1%;
+	float: right;
+	width: 72%;
+	overflow: auto;
+	top: 33px;
+}
+#content { 
+	margin: 20px 2% 0px; 
+	color: #313131;
+	/*  position:absolute;*/
+	/*  overflow:auto;*/
+	z-index: 0;
+}
+#header h1, #footer h1 {
+	color: #F6F4F2;
+	font-size: 1.2em;
+	font-weight: normal;
+	line-height: 32px;
+	margin: 0px;
+	text-align: center;
+	text-shadow: 0px -1px 1px #222222;
+}
+#footer h1 {
+	font-size: .9em;
+	text-align: left;
+	padding-left: 16px;
+}
+#content h2 {
+	border-bottom: 1px solid #ccc;
+	padding-bottom: 0.25em;
+	color: #e87a12;
+	font-size: 1.4em;
+	font-weight: bold;
+	margin: 1.3em 0px 0.8em 0px;
+	text-shadow: #FFFFFF 0px 1px 1px;
+}
+code { 
+	font-weight: bold; 
+	font-size: 1.0em;
+	color: #bc6108;
+}
+blockquote {
+	color: #767573;
+	font-style: normal;
+	margin-left: 30px;
+	margin-right: 10px;
+	padding-left: 6px;
+	position: relative;
+	text-shadow: #FFFFFF 0px 1px 0px;
+}
+blockquote p {
+	padding: 5px 0px;
+	font-size: 0.8em;
+}
+blockquote::before {
+	font-style: normal;
+	content: '\201C';
+	font-size: 400%;
+	font-family: Georgia, Palatino, 'Times New Roman', Times;;
+	position: absolute;
+	left: -25px;
+	top: 0.2em;
+	color: #E0E0E0;
+}
+ul {
+	margin-left: 40px;
+}
+ul>li {
+	list-style: disc;
+	list-style-position: outside;
+}
+ul ul {
+	margin-bottom: 0.5em;
+	margin-top: 0.5em;
+}
+a.btn {
+  	border: 1px solid #555;
+  	-webkit-border-radius: 5px;
+  	border-radius: 5px;
+  	text-align:center;
+  	display:block;
+/*   	float:left; */
+  	clear: both;
+  	background:#eceae7;
+  	width:90%;
+  	color:#e87a12;
+  	font-size:1.1em;
+  	font-weight: bold;
+  	text-decoration:none;
+  	padding:0.7em 0.1em;
+ 	margin: 5px auto;	
+}
+a.btn.deux {
+	clear: none;
+	float:left;
+  	width: 45%;	
+  	margin:6px 3px 3px;
+}
+a.btn.trois {
+	clear: none;
+	float:left;
+	width: 30%;
+  	margin:6px 2px 3px;
+}
+#deviceinfo {
+	border-collapse:collapse;
+	width:75%;
+	margin: 20px auto;
+}
+#deviceinfo tr th.alt, #deviceinfo tr td.alt {
+	text-align:left;
+}
+#deviceinfo, th, td {
+	border: 1px solid #ccc;
+}
+#deviceinfo th {
+	font-size:1.15em;
+	padding-top:4px;
+	padding-bottom:4px;
+	background-color:#e89442;
+	color:#f0f0f0;
+	height: 1.3em;
+}
+#deviceinfo td, #deviceinfo th {
+	padding:3px 7px 2px 7px;
+	vertical-align:bottom;
+	text-align:right;
+}
+.result-block {
+	clear: both;
+	margin-top: 0.3em;
+}
+#accel-data {
+	margin-bottom: 15px;
+	width: 95%;
+}
+dl{
+  	clear:both;
+  	list-style-type:none;
+  	padding-left:2px;
+  	overflow:auto;
+}
+dl > dt{
+  	float:left;
+  	margin-top: 15px;
+  	margin-left:5px;
+}
+dl > dd{
+  	float:left;
+  	font-weight:bold;
+  	margin-top: 15px;
+  	margin-left: 10px;
+  	margin-right: 25px;
+  }
+.api-div {
+ 	display: none;
+	margin-bottom: 0.6em;
+}
+.api-div h4 {
+ 	display: block; 
+ 	font-size: 0.8em;
+ 	font-weight: normal; 
+ 	background: #eceae7; 
+ 	border-left: 6px solid #de2c2c;
+ 	padding: 5px 8px;
+}
+.api-div .help {
+ 	border-left: 6px solid #188f8f;
+}
+#cameraImage {
+	border: 2px solid #666;
+	display: none;
+	margin: 1.7em auto;
+	width:200px;
+	height:150px;
+}
+#eventOutput {
+	height:1.5em;
+	display: block;
+}
+#map {
+	width: 180px; 
+	height: 140px; 
+	border: 2px solid #666;
+ 	display: none;
+	margin: 1.0em auto; 
+}
+
+@media screen and (max-width: 320px) and (orientation:portrait) {
+	/* #header h1 { color: #f00; }  For TESTING */	
+	#sidebar { display: none; }	
+	#scrollable {
+		padding: 0px;
+		margin: 64px 1% 0px 1%;
+		float: left;
+		width: 97%;
+		overflow: auto;
+	}	
+	#subheader {
+		display: block;
+		background-color: #CBCBCB;
+		background: -webkit-gradient(linear, left top, left bottom, color-stop(0.0, #F9F9F9),color-stop(1.0, #CBCBCB) );
+		border-top: 1px solid #383A3C;
+		border-bottom: 1px solid #919395;
+		height: 42px;
+		left: 0px;
+		position: fixed;
+		top: 33px;
+		width: 100%;
+		z-index: 1;
+		text-align:center;
+		}
+	select {
+		font-size: 1.65em;
+		font-weight: bold;
+		padding: 5px 16px 5px 20px;
+		color: #444;
+		background-color: #e8a35f;
+		margin: 3px auto;
+	}
+	#deviceinfo {
+		width:90%;
+	}	
+}
+@media all and (min-width: 800px){
+	 /* #header h1 { color: #0f0; } FOR TESTING */
+	#content {
+		font-size: 1.0em;
+		line-height: 1.2em;
+	}
+	#content h2 {
+		padding-bottom: 0.4em;
+		font-size: 2em;
+ 		margin-top: 2em;
+	}
+	blockquote {
+		margin-top: 20px;
+		margin-bottom: 30px;
+	}
+	blockquote p {
+		/* padding: 5px 0px; 10px 0px; */
+		font-size: 0.95em;
+	}
+	blockquote code {
+	  	font-size: 1.2em;
+	}
+	#cameraImage {
+		width: 400px;
+		height: 300px;
+    }
+    #map {
+		width: 360px; 
+		height: 280px; 
+		margin: 1.5em auto;
+	}
+	#content {
+		margin: 30px 3% 0px;
+	}
+	#sidebar {
+		padding-top: 15px;
+    	position: fixed;
+	}
+	#sidebar li,#sidebar li a {
+		font-size: 1.2em;
+		margin: 1.8em 0px;
+	}	
+	.api-div h4 {
+ 		font-size: 0.9em;
+	}
+	#footer {
+		display: block;
+	}
+}
+
+@media all and (min-width: 1200px){
+	/*#header h1 { color: #ff0; }   FOR TESTING */
+	blockquote p {
+		/* padding: 5px 0px; 10px 0px; */
+		font-size: 1.0em;
+	}
+	blockquote code {
+	  	font-size: 1.3em;
+	}
+	#deviceinfo {
+		width:50%;
+	}
+	#deviceinfo th {
+		font-size:1.35em;
+		height: 1.4em;
+	}
+	#deviceinfo td, #deviceinfo th {
+		font-size: 1.1em;
+	}
+	#footer {
+		display: none;
+	}
+}
