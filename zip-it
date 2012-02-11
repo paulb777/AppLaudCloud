@@ -16,4 +16,5 @@ cp -p client/edit/help.js build/client/edit/
 cp -p client/css/applaudweb.css build/client/css/
 cp -rp client/ace/build/src build/client/
 cp -rp client/favicon.ico build/client/
+cp -p client/robots.txt build/client/
 zip -rq z build/client build/server 
