@@ -249,7 +249,7 @@ dl > dd{
 	margin: 1.0em auto; 
 }
 
-@media screen and (max-width: 320px) and (orientation:portrait) {
+@media screen and (max-width: 480px) and (orientation:portrait) {
 	/* #header h1 { color: #f00; }  For TESTING */	
 	#sidebar { display: none; }	
 	#scrollable {
