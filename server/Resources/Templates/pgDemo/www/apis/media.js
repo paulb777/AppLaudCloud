@@ -95,9 +95,9 @@ function playMyAudio() {
     // Note: Two ways to access media file: (1) web (below)        
     var src = 'http://audio.ibeat.org/content/p1rj1s/p1rj1s_-_rockGuitar.mp3';        
     // (2) local (on device): copy file to project's /assets folder, access with:
+    // var src = '/android_asset/yourthemesong.m4a';     
     // Note that AppLaud Cloud's runProject capability does not support accessing
-    // files in the assets folder. You must do a build
-    // var src = '/android_asset/yourthemesong.m4a'; 
+    // files in the assets folder. You must do a build 
      
     playAudio(src);
 }
