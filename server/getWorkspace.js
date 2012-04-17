@@ -85,6 +85,9 @@ exports.projects = function(user, callback) {
             if (data.length === 0) {
                 callback({ success : false, error : 'No projects found.' });
             } else {
+                data.sort(function(a,b) {
+                    return (a.ctime < b.ctime) ? 1 : 0;
+                });
                 callback({ success : true, list : data });
             }
         }
@@ -94,9 +97,17 @@ exports.projects = function(user, callback) {
         var indexFile = f + '/assets/www/index.html';
         path.exists(base + '/' + indexFile, function(exists) {
             if (exists) {
-                data.push({ project : f /* , link : indexFile */ });
-            }
-            registerDone();
+                fs.stat(base + '/' + f, function(err, stats) {
+                    if (!err) {
+                        data.push({ project : f, ctime : stats.ctime });
+                        registerDone();
+                    } else {
+                        registerDone();
+                    }  
+                });
+            } else {
+                registerDone();
+            };
         });
     };
     
