@@ -63,7 +63,7 @@ http.createServer(function(request, response){
         request.addListener('end', function () {
             dir.serve(request, response, mod, function(e, res) { // Serve files!
                 if (e && e.status === 404) {   // handle 404 error
-                    console.log('404 error: ' + request.url);
+                    console.log('404: ' + request.url + ' ' + Date() + ' ' + user);
                     response.writeHead(404, {});
                     response.end('<h1> Error 404: File not found</h1>\n');
 //                    dir.serveFile('error404.html', request, response);
