@@ -63,12 +63,13 @@ define(function(require, exports, module) {
         }
         var pkg = document.getElementById("npd-package").value;
         var opts = document.getElementById("npd-template").value;
+        var version = document.getElementById("npd-version").value;
         opts = opts.split(':');
         var template = opts[0];
         var jqm = opts[1];
         var target = document.getElementById("npd-android-target").value;
         connection.ajax({ url : "/phonegapCreate",  type : "POST", data: {project: project, pkg : pkg, 
-            template : template, jqm : jqm, target : target}, success : function(r) {
+            template : template, jqm : jqm, target : target, version : version}, success : function(r) {
                 if (r.success) {
                     success(project);
                 } else {

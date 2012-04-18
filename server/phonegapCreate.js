@@ -17,6 +17,7 @@ exports.run = function(user, postValue, writeDataCallback) {
     var projectDir = null; // Project's path - returned from android project creator
     var jqm = postValue.jqm === 'true'; // include jQuery Mobile or not
     var template = postValue.template; // template to create project from
+    var pgVersionDir = __dirname + "/Resources/phonegap/" + postValue.version + "/"; // bundled PhoneGap version directory
 
     var log = function(str) {
         console.log(str);
@@ -91,14 +92,15 @@ exports.run = function(user, postValue, writeDataCallback) {
 
     var getPhonegapJar = function() {
         // Get phonegap.jar and the classpath
-        copymove.copy(user, [__dirname + "/Resources/phonegap/jar/phonegap.jar", projectDir + '/libs/phonegap.jar'], function (data) {
+        var jarDir = pgVersionDir + "jar/";
+        copymove.copy(user, [jarDir + "phonegap.jar", projectDir + '/libs/phonegap.jar'], function (data) {
             if (!data.success) {
                 log( "getPhonegapJar: Error copying phonegap.jar to " + projectDir + " for PhoneGap project. " + data.error);
             } else {
                 register(); // #2 success
             }
         }); 
-        copymove.copy(user, [__dirname + "/Resources/phonegap/jar/dot_classpath", projectDir + '/.classpath'], function (data) {
+        copymove.copy(user, [jarDir + "dot_classpath", projectDir + '/.classpath'], function (data) {
             if (!data.success) {
                 log( "getPhonegapJar: Error copying .classpath to " + projectDir + " for PhoneGap project. " + data.error);
             } else {
@@ -120,7 +122,7 @@ exports.run = function(user, postValue, writeDataCallback) {
             if (err) {
                 log( "getWWWSources: Error creating assets/www directory: " + err);
             } else {
-                copymove.copy(user, ["-r", __dirname + "/Resources/phonegap/js/.", projectDir + "/assets/www/"], function (data) {
+                copymove.copy(user, ["-r", pgVersionDir + "js/.", projectDir + "/assets/www/"], function (data) {
                     if (!data.success) {
                         log( "getWWWSources: Error copying phonegap.js to " + projectDir + " for PhoneGap project. " + data.error);
                     } else {
@@ -257,7 +259,7 @@ exports.run = function(user, postValue, writeDataCallback) {
             if (err) {
                 log( "getResFiles: Error creating res/xml directory: " + err);
             } else {
-                copymove.copy(user, ["-r", __dirname + "/Resources/phonegap/xml/.", projectDir + '/res/xml/'], function (data) {
+                copymove.copy(user, ["-r", pgVersionDir + "xml/.", projectDir + '/res/xml/'], function (data) {
                     if (!data.success) {
                         log( "getResFiles: Error copying res/xml/* to " + projectDir + " for PhoneGap project. " + data.error);
                     } else {
