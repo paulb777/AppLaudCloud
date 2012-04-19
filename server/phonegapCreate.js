@@ -17,7 +17,8 @@ exports.run = function(user, postValue, writeDataCallback) {
     var projectDir = null; // Project's path - returned from android project creator
     var jqm = postValue.jqm === 'true'; // include jQuery Mobile or not
     var template = postValue.template; // template to create project from
-    var pgVersionDir = __dirname + "/Resources/phonegap/" + postValue.version + "/"; // bundled PhoneGap version directory
+    var pgVersion = postValue.version;
+    var pgVersionDir = __dirname + "/Resources/phonegap/" + pgVersion + "/"; // bundled PhoneGap version directory
 
     var log = function(str) {
         console.log(str);
@@ -41,7 +42,11 @@ exports.run = function(user, postValue, writeDataCallback) {
             }
 
             // Import com.phonegap instead of Activity
-            data = data.replace("import android.app.Activity;", "import com.phonegap.*;");
+            if (pgVersion === '1.4.1') {
+                data = data.replace("import android.app.Activity;", "import com.phonegap.*;");
+            } else {
+                data = data.replace("import android.app.Activity;", "import org.apache.cordova.DroidGap;");
+            }
 
             // Change superclass to DroidGap instead of Activity
             data = data.replace("extends Activity", "extends DroidGap");

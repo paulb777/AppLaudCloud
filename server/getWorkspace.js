@@ -86,7 +86,7 @@ exports.projects = function(user, callback) {
                 callback({ success : false, error : 'No projects found.' });
             } else {
                 data.sort(function(a,b) {
-                    return (a.ctime < b.ctime) ? 1 : 0;
+                    return b.ctime - a.ctime;
                 });
                 callback({ success : true, list : data });
             }
@@ -99,7 +99,7 @@ exports.projects = function(user, callback) {
             if (exists) {
                 fs.stat(base + '/' + f, function(err, stats) {
                     if (!err) {
-                        data.push({ project : f, ctime : stats.ctime });
+                        data.push({ project : f, ctime : stats.ctime.getTime() });
                         registerDone();
                     } else {
                         registerDone();
